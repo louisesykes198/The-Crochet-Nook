@@ -6,270 +6,159 @@ Welcome to **My Crochet Hub** – a platform for crochet lovers to share project
 
 ## 📖 Table of Contents
 
-- [USER EXPERIENCE](#user-experience)
-  - [Strategy Plane](#strategy-plane)
-  - [Scope Plane](#scope-plane)
-  - [Structure Plane](#structure-plane)
-  - [Skeleton Plane](#skeleton-plane)
-  - [Surface Plane](#surface-plane)
-- [Agile Methodology](#agile-methodology)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Testing](#testing)
-- [Deployment and Local Development](#deployment-and-local-development)
-- [Credits](#credits)
+1. [User Experience](#user-experience)  
+   - [Project Overview](#project-overview)  
+   - [Goals & Challenges](#goals--challenges)  
+   - [Target Users](#target-users)  
+   - [Research & Testing](#research--testing)  
+
+2. [Content & Features](#content--features)  
+   - [Main Features](#main-features)  
+   - [Categories & Filtering](#categories--filtering)  
+   - [User Profiles](#user-profiles)  
+   - [Project Uploads](#project-uploads)  
+
+3. [Site Structure](#site-structure)  
+   - [Navigation Flow](#navigation-flow)  
+   - [Page Layouts (Wireframes)](#page-layouts-wireframes)  
+   - [How Users Move Through the Site](#how-users-move-through-the-site)  
+
+4. [Design & Branding](#design--branding)  
+   - [Fonts & Colors](#fonts--colors)  
+   - [Images & Visuals](#images--visuals)  
+   - [Accessibility](#accessibility)  
+
+5. [Database & Backend](#database--backend)  
+   - [Data Structure & Relationships](#data-structure--relationships)  
+   - [User Accounts & Security](#user-accounts--security)  
+
+6. [Technology & Tools](#technology--tools)  
+   - [Languages & Frameworks](#languages--frameworks)  
+   - [Hosting & Deployment](#hosting--deployment)  
+
+7. [Testing & Development](#testing--development)  
+   - [Bug Fixes & Solutions](#bug-fixes--solutions)  
+   - [Future Improvements](#future-improvements)  
+
+8. [Getting Started](#getting-started)  
+   - [How to Install & Run the Project](#how-to-install--run-the-project)  
+   - [How to Contribute](#how-to-contribute)  
 
 ---
 
-## 🎨 USER EXPERIENCE
+## 🧑‍💻 User Experience
 
-### **Strategy Plane**
-<details>
-  <summary>📌 Project Goals</summary>
-  - Provide an easy-to-use platform for crochet enthusiasts  
-  - Allow users to share their projects and get feedback  
-  - Encourage engagement through comments and likes  
-</details>
+### **Project Overview**
+My Crochet Hub is a web platform where users can share, explore, and engage with crochet projects.
 
-<details>
-  <summary>🔍 Problems We Are Trying to Solve</summary>
-  - Lack of a dedicated crochet community with interactive features  
-  - Difficulty in finding crochet patterns based on skill level  
-</details>
+### **Goals & Challenges**
+- Create a user-friendly space for crochet enthusiasts  
+- Allow easy uploading and sharing of projects  
+- Ensure a secure and engaging community  
 
-<details>
-  <summary>🏢 Internal Stakeholders' Goals</summary>
-  - Ensure smooth user experience and easy project uploads  
-  - Attract a broad audience from beginners to experts  
-</details>
+### **Target Users**
+- Beginners looking for inspiration  
+- Experienced crocheters sharing their work  
+- Crafters seeking feedback on designs  
 
-<details>
-  <summary>💰 Business Model</summary>
-  - Free to use with optional premium features (if applicable in the future)  
-</details>
-
-<details>
-  <summary>🎯 Product Goals</summary>
-  - Easy navigation and search  
-  - User engagement through interaction features  
-</details>
-
-<details>
-  <summary>🧑‍💻 User Research</summary>
-  - Surveys and feedback from crochet communities  
-  - Analysis of existing platforms and their limitations  
-</details>
-
-<details>
-  <summary>🔎 Discovery Phase</summary>
-  - Gathering insights on user needs and expectations  
-</details>
-
-<details>
-  <summary>🚀 Product Launch - Alpha Testing</summary>
-  - Internal testing phase with early users  
-</details>
-
-<details>
-  <summary>🌍 Product Launch - Beta Testing</summary>
-  - Open beta for a wider audience  
-</details>
+### **Research & Testing**
+- User feedback from crochet communities  
+- Testing different layouts for ease of use  
 
 ---
 
-### **Scope Plane**
-<details>
-  <summary>📝 Feature Planning</summary>
-  - CRUD functionality for projects  
-  - User authentication  
-</details>
+## 🎨 Content & Features
 
-<details>
-  <summary>📰 Content Requirement Planning</summary>
-  - Text, images, videos  
-</details>
+### **Main Features**
+- User authentication (sign up, log in, log out)  
+- Post and view crochet projects  
+- Like and comment on posts  
 
-<details>
-  <summary>🔎 Integrating Content Strategy and SEO</summary>
-  - Optimizing descriptions and metadata  
-</details>
+### **Categories & Filtering**
+- Organize projects by skill level (Beginner, Intermediate, Advanced)  
+- Filter by categories (Clothing, Home Decor, Accessories)  
 
-<details>
-  <summary>📖 User Stories</summary>
-  - As a user, I want to upload projects with images  
-</details>
+### **User Profiles**
+- Users can manage their crochet posts  
+- Profile pages displaying submitted projects  
+
+### **Project Uploads**
+- Users can upload project images and descriptions  
+- Projects can include difficulty level and materials used  
 
 ---
 
-### **Structure Plane**
-<details>
-  <summary>🖥️ Interaction Design</summary>
-  - User-friendly forms and navigation  
-</details>
+## 🗺️ Site Structure
 
-<details>
-  <summary>🔗 User Flow Diagram</summary>
-  - Visual representation of user paths  
-</details>
+### **Navigation Flow**
+- Users can browse all projects on the homepage  
+- Clicking a project opens a detailed view  
 
-<details>
-  <summary>🗂️ Information Architecture</summary>
-  - Categories and subcategories for project organization  
-</details>
+### **Page Layouts (Wireframes)**
+- [Homepage Wireframe](#) *(Add wireframe link here)*  
+- [Project Page Wireframe](#)  
 
-<details>
-  <summary>🌎 Site Map</summary>
-  - Homepage, project page, user dashboard  
-</details>
+### **How Users Move Through the Site**
+- New users land on homepage → Browse projects → Sign up to interact  
+- Logged-in users can like, comment, and upload projects  
 
 ---
 
-### **Database Design**
-<details>
-  <summary>🗃️ Database ERD</summary>
-  - Entity-Relationship Diagram to define the structure  
-</details>
+## 🎨 Design & Branding
 
-<details>
-  <summary>📊 Data Modelling</summary>
-  - Defining models and relationships  
-</details>
+### **Fonts & Colors**
+- **Primary Font:** (Specify here)  
+- **Color Scheme:** Pastel/Natural Tones  
 
-<details>
-  <summary>👤 User Model</summary>
-  - Stores user authentication data  
-</details>
+### **Images & Visuals**
+- High-quality photos for project previews  
 
-<details>
-  <summary>🎨 Category Model</summary>
-  - Organizes projects based on themes  
-</details>
-
-<details>
-  <summary>🛍️ Product Model</summary>
-  - Tracks crochet projects  
-</details>
+### **Accessibility**
+- WCAG-compliant color contrast  
+- Screen reader-friendly design  
 
 ---
 
-### **Skeleton Plane**
-<details>
-  <summary>📐 Wireframes</summary>
-  - Sketches of page layouts  
-</details>
+## 🗂️ Database & Backend
+
+### **Data Structure & Relationships**
+- Users table  
+- Projects table (linked to users)  
+- Comments & Likes tables  
+
+### **User Accounts & Security**
+- Secure authentication with Django  
+- Password encryption  
 
 ---
 
-### **Surface Plane**
-<details>
-  <summary>🔤 Typography</summary>
-  - Primary Font: (Specify here)  
-</details>
+## 🛠️ Technology & Tools
 
-<details>
-  <summary>🎨 Colour Palette</summary>
-  - Pastel tones for a cozy feel  
-</details>
+### **Languages & Frameworks**
+- HTML, CSS, JavaScript, Python  
+- Django & Flask  
 
-<details>
-  <summary>📸 Imagery</summary>
-  - High-quality photos of crochet projects  
-</details>
+### **Hosting & Deployment**
+- Hosted on Heroku  
+- PostgreSQL for database  
 
 ---
 
-## 🚀 Agile Methodology
-<details>
-  <summary>📊 GitHub Projects</summary>
-  - Managing tasks and sprints  
-</details>
+## ✅ Testing & Development
+
+### **Bug Fixes & Solutions**
+- List of resolved and ongoing issues  
+
+### **Future Improvements**
+- Adding a **search** feature  
+- Implementing **user messaging**  
 
 ---
 
-## ✨ Features
-<details>
-  <summary>🛍️ Product Categorization</summary>
-  - Users can browse by categories  
-</details>
+# 🚀 Getting Started
 
-<details>
-  <summary>🔢 Stock Keeping Unit (SKU) Architecture</summary>
-  - Unique identifiers for each project  
-</details>
-
-<details>
-  <summary>🛡️ Defensive Programming</summary>
-  - Secure form handling  
-</details>
-
-<details>
-  <summary>♿ Accessibility</summary>
-  - WCAG compliance  
-</details>
-
----
-
-## 🛠️ Technologies Used
-<details>
-  <summary>💻 Languages Used</summary>
-  - HTML, CSS, JavaScript, Python  
-</details>
-
-<details>
-  <summary>📚 Frameworks Used</summary>
-  - Django, Flask, Bootstrap  
-</details>
-
-<details>
-  <summary>📊 Databases Used</summary>
-  - PostgreSQL  
-</details>
-
-<details>
-  <summary>📦 Libraries and Packages Used</summary>
-  - Django Authentication, Pillow for images  
-</details>
-
-<details>
-  <summary>🖥️ Programmes and Applications Used</summary>
-  - GitHub, VS Code, Heroku  
-</details>
-
----
-
-## 🛠️ Testing
-<details>
-  <summary>🐛 Bugs, Issues and Solutions</summary>
-  - List of resolved and unresolved bugs  
-</details>
-
----
-
-## 🌍 Deployment and Local Development
-<details>
-  <summary>🚀 Deployment</summary>
-  - Hosted on Heroku  
-</details>
-
-<details>
-  <summary>💻 Local Development</summary>
-  - Instructions to run locally  
-</details>
-
-<details>
-  <summary>🍴 How to Fork</summary>
-  - Steps for contributors  
-</details>
-
-<details>
-  <summary>🔁 How to Clone</summary>
-  - Git clone command  
-</details>
-
----
-
-## ❤️ Credits
-<details>
-  <summary>🙏 Acknowledgements</summary>
-  - Special thanks to contributors  
-</details>
+### **How to Install & Run the Project**
+1. Clone the repository:  
+   ```sh
+   git clone https://github.com/yourusername/mycrochethub.git
+   cd mycrochethub
