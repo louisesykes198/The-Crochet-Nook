@@ -1,164 +1,129 @@
-# 🧶 My Crochet Hub
+# 🧶 The Crochet Nook
 
-Welcome to **My Crochet Hub** – a platform for crochet lovers to share projects, patterns, and ideas! 🌸✨  
+## 🏗️ User Experience
 
----
+### **Project Overview**  
+The Crochet Nook is a web platform where users can share, explore, and engage with crochet projects.  
 
-## 📖 Table of Contents
+### **Goals & Challenges**  
+- Create a user-friendly space for crochet enthusiasts.  
+- Allow easy uploading and sharing of projects.  
+- Ensure a secure and engaging community.  
 
-1. [User Experience](#user-experience)  
-   - [Project Overview](#project-overview)  
-   - [Goals & Challenges](#goals--challenges)  
-   - [Target Users](#target-users)  
-   - [Research & Testing](#research--testing)  
+### **Target Users**  
+- Beginner to expert crocheters.  
+- Users looking for inspiration and tutorials.  
+- People who want to showcase their crochet work.  
 
-2. [Content & Features](#content--features)  
-   - [Main Features](#main-features)  
-   - [Categories & Filtering](#categories--filtering)  
-   - [User Profiles](#user-profiles)  
-   - [Project Uploads](#project-uploads)  
+### **Research & Testing**  
+- Surveys and feedback from crochet communities.  
+- Usability testing for site navigation and features.  
 
-3. [Site Structure](#site-structure)  
-   - [Navigation Flow](#navigation-flow)  
-   - [Page Layouts (Wireframes)](#page-layouts-wireframes)  
-   - [How Users Move Through the Site](#how-users-move-through-the-site)  
-
-4. [Design & Branding](#design--branding)  
-   - [Fonts & Colors](#fonts--colors)  
-   - [Images & Visuals](#images--visuals)  
-   - [Accessibility](#accessibility)  
-
-5. [Database & Backend](#database--backend)  
-   - [Data Structure & Relationships](#data-structure--relationships)  
-   - [User Accounts & Security](#user-accounts--security)  
-
-6. [Technology & Tools](#technology--tools)  
-   - [Languages & Frameworks](#languages--frameworks)  
-   - [Hosting & Deployment](#hosting--deployment)  
-
-7. [Testing & Development](#testing--development)  
-   - [Bug Fixes & Solutions](#bug-fixes--solutions)  
-   - [Future Improvements](#future-improvements)  
-
-8. [Getting Started](#getting-started)  
-   - [How to Install & Run the Project](#how-to-install--run-the-project)  
-   - [How to Contribute](#how-to-contribute)  
+### **Content & Features**  
+A breakdown of the core functionalities available in The Crochet Nook.  
 
 ---
 
-## 🧑‍💻 User Experience
+## ✨ Main Features
 
-### **Project Overview**
-My Crochet Hub is a web platform where users can share, explore, and engage with crochet projects.
+### **User Stories**  
 
-### **Goals & Challenges**
-- Create a user-friendly space for crochet enthusiasts  
-- Allow easy uploading and sharing of projects  
-- Ensure a secure and engaging community  
+#### **User Authentication & Profiles**  
+- As a user, I want to create an account so that I can access and contribute to crochet projects.  
+- As a user, I want to log in and log out securely so that my account remains protected.  
+- As a user, I want to reset my password in case I forget it so that I can regain access to my account.  
+- As a user, I want to update my profile information (if profiles are implemented) so that I can personalize my experience.  
 
-### **Target Users**
-- Beginners looking for inspiration  
-- Experienced crocheters sharing their work  
-- Crafters seeking feedback on designs  
+#### **Project Uploads & Management**  
+- As a user, I want to add a new crochet project with images and text so that I can share my work with others.  
+- As a user, I want to edit my crochet projects so that I can make corrections or updates.  
+- As a user, I want to delete my crochet projects so that I can remove content I no longer want to share.  
+- As a user, I want to categorize my crochet projects so that others can easily find them.  
 
-### **Research & Testing**
-- User feedback from crochet communities  
-- Testing different layouts for ease of use  
+#### **Browsing & Filtering**  
+- As a user, I want to browse crochet projects so that I can find inspiration.  
+- As a user, I want to filter crochet projects by category and difficulty level so that I can find patterns that match my skill level.  
+- As a user, I want to search for crochet projects by keywords so that I can find specific patterns or techniques.  
 
----
+#### **Engagement & Interaction**  
+- As a user, I want to like crochet projects so that I can show appreciation for others' work.  
+- As a user, I want to comment on crochet projects so that I can ask questions and give feedback.  
+- As a user, I want to delete my own comments so that I can remove anything I no longer want to say.  
+- As a user, I want to see how many likes and comments a project has so that I can gauge its popularity.  
 
-## 🎨 Content & Features
-
-### **Main Features**
-- User authentication (sign up, log in, log out)  
-- Post and view crochet projects  
-- Like and comment on posts  
-
-### **Categories & Filtering**
-- Organize projects by skill level (Beginner, Intermediate, Advanced)  
-- Filter by categories (Clothing, Home Decor, Accessories)  
-
-### **User Profiles**
-- Users can manage their crochet posts  
-- Profile pages displaying submitted projects  
-
-### **Project Uploads**
-- Users can upload project images and descriptions  
-- Projects can include difficulty level and materials used  
+#### **Admin & Moderation**  
+- As an admin, I want to manage users so that I can ensure a positive community experience.  
+- As an admin, I want to delete inappropriate projects or comments so that the platform remains safe and friendly.  
 
 ---
 
-## 🗺️ Site Structure
+## 📌 Site Structure  
 
-### **Navigation Flow**
-- Users can browse all projects on the homepage  
-- Clicking a project opens a detailed view  
+### **Navigation Flow**  
+- How users move between different sections of the site.  
 
-### **Page Layouts (Wireframes)**
-- [Homepage Wireframe](#) *(Add wireframe link here)*  
-- [Project Page Wireframe](#)  
-
-### **How Users Move Through the Site**
-- New users land on homepage → Browse projects → Sign up to interact  
-- Logged-in users can like, comment, and upload projects  
+### **How Users Move Through the Site**  
+- Explanation of the user journey from browsing to engaging.  
 
 ---
 
-## 🎨 Design & Branding
+## 📐 Wireframes & User Flow  
 
-### **Fonts & Colors**
-- **Primary Font:** (Specify here)  
-- **Color Scheme:** Pastel/Natural Tones  
+### **Wireframes**  
+_(Include screenshots or links to wireframes here.)_  
 
-### **Images & Visuals**
-- High-quality photos for project previews  
-
-### **Accessibility**
-- WCAG-compliant color contrast  
-- Screen reader-friendly design  
+### **User Flow Diagram**  
+_(Include a visual representation of how users navigate through the site.)_  
 
 ---
 
-## 🗂️ Database & Backend
+## 🎨 Design & Branding  
 
-### **Data Structure & Relationships**
-- Users table  
-- Projects table (linked to users)  
-- Comments & Likes tables  
+### **Fonts & Colors**  
+- Soft, pastel colors for a warm and welcoming aesthetic.  
 
-### **User Accounts & Security**
-- Secure authentication with Django  
-- Password encryption  
+### **Images & Visuals**  
+- High-quality project images with clear descriptions.  
 
----
-
-## 🛠️ Technology & Tools
-
-### **Languages & Frameworks**
-- HTML, CSS, JavaScript, Python  
-- Django & Flask  
-
-### **Hosting & Deployment**
-- Hosted on Heroku  
-- PostgreSQL for database  
+### **Accessibility**  
+- Ensuring text contrast, alt text for images, and keyboard navigation support.  
 
 ---
 
-## ✅ Testing & Development
+## 🗄️ Database & Backend  
 
-### **Bug Fixes & Solutions**
-- List of resolved and ongoing issues  
+### **Data Structure & Relationships**  
+- Breakdown of the database schema and models.  
 
-### **Future Improvements**
-- Adding a **search** feature  
-- Implementing **user messaging**  
+### **User Accounts & Security**  
+- How user authentication and security are handled.  
 
 ---
 
-# 🚀 Getting Started
+## 🔧 Technology & Tools  
 
-### **How to Install & Run the Project**
+### **Languages & Frameworks**  
+- Python, Django, SQL, HTML, CSS, JavaScript, Bootstrap.  
+
+### **Hosting & Deployment**  
+- Hosted on Heroku with PostgreSQL for database management.  
+
+---
+
+## 🛠️ Testing & Development  
+
+### **Bug Fixes & Solutions**  
+- Known issues and how they were resolved.  
+
+### **Future Improvements**  
+- Planned features and enhancements.  
+
+---
+
+## 🚀 Getting Started  
+
+### **How to Install & Run the Project**  
 1. Clone the repository:  
    ```sh
-   git clone https://github.com/yourusername/mycrochethub.git
-   cd mycrochethub
+   git clone https://github.com/louisesykes198/The-Crochet-Nook.git
+   cd The-Crochet-Nook
