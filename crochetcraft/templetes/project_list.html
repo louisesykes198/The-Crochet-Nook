@@ -22,6 +22,10 @@
             <td>{{ project.skill level }}</td>
             <td>{{ project.Materials Needed }}</td>
             <td>{{ project.Notes }}</td>
+            <td>
+                <a href="{% url 'edit_project' item.id %}" class="btn btn-warning btn-sm">Edit Project</a>
+                <a href="{% url 'delete_project' item.id %}" class="btn btn-warning btn-sm">Delete Project</a>
+            </td>
         </tr>
         {% empty %}
         <tr>
