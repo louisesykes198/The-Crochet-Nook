@@ -43,5 +43,6 @@ urlpatterns = [
     path('edit/<int:item_id>/', views.edit_project, name='edit_project'),
     path('delete/<int:project_id>/', views.delete_project, name='delete_project'),
     path('projects/', views.project_list, name='project_list'),
+    path('category/<str:category_name>/', views.category_view, name='category_view'),
 ]
 
