@@ -70,7 +70,32 @@ A breakdown of the core functionalities available in The Crochet Nook.
 ## 📐 Wireframes & User Flow  
 
 ### **Wireframes**  
-_(Include screenshots or links to wireframes here.)_  
+
+My website's wireframes serve as a basic framework for organising and arranging its overall design. 
+They ensure a well-organised layout that improves user experience by offering a clear visual guidance for creating each page. 
+The wireframes outline out important components like navigation, content placement, and interactive features, 
+which helps to expedite the design process and guarantee a logical, user-friendly flow throughout the website.
+
+#### Desktop Wireframe 
+
+![image](docs/desktop-registration-page.png)
+
+![image](docs/desktop-login-page.png)
+
+![image](docs/desktop-homepage.png)
+
+![image](docs/desktop-project-page.png)
+
+![image](docs/desktop-edit-page.png)
+
+#### Mobile Wireframe 
+
+![image](docs/mobile-view.png)
+
+#### Tablet and iPad Wireframe 
+
+![image](docs/ipad-view.png)
+
 
 ### **User Flow Diagram**  
 _(Include a visual representation of how users navigate through the site.)_  
