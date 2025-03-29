@@ -65,10 +65,14 @@ from django.http import HttpResponse
 from .models import Project
 from .forms import ProjectForm  
 
-# Home view - This will isplays the list of projects
+# Home view - This will displays the list of projects
 def home(request):
     projects = Project.objects.all()  # Fetch all the projects
     return render(request, 'project_list.html', {'projects': projects})
+
+def category_view(request, category_name):
+    projects = Project.objects.filter(category=category_name)
+    return render(request, 'category.html', {'category': category_name, 'projects': projects})
 
 # Add Project - This will bring up a form to add a new project
 def add_project(request):
