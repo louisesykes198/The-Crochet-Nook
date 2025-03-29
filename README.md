@@ -90,7 +90,15 @@ which helps to expedite the design process and guarantee a logical, user-friendl
 
 #### Mobile Wireframe 
 
-![image](docs/mobile-view.png)
+![image](docs/moblie-register.png)
+
+![image](docs/moblie-login.png)
+
+![image](docs/mobile-homepage.png)
+
+![image](docs/mobile-project.png)
+
+![image](docs/moblie-edit.png)
 
 #### Tablet and iPad Wireframe 
 
