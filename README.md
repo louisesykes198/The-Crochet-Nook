@@ -102,8 +102,15 @@ which helps to expedite the design process and guarantee a logical, user-friendl
 
 #### Tablet and iPad Wireframe 
 
-![image](docs/ipad-view.png)
+![image](docs/tablet-register.png)
 
+![image](docs/tablet-login.png)
+
+![image](docs/tablet-homepage.png)
+
+![image](docs/tablet-project.png)
+
+![image](docs/tablet-edit.png)
 
 ### **User Flow Diagram**  
 _(Include a visual representation of how users navigate through the site.)_  
