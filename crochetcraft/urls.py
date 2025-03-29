@@ -38,11 +38,13 @@ from crochet import views  # Imports views from the 'crochet' app
 # This code will run the urls for all the websites pages so you can add, edit, delete and view the projects
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
+    path('', views.home, name='home'),  # Home page
+    path('projects/', views.project_list, name='project_list'),  # Project list page
     path('add/', views.add_project, name='add_project'),
     path('edit/<int:item_id>/', views.edit_project, name='edit_project'),
     path('delete/<int:project_id>/', views.delete_project, name='delete_project'),
-    path('projects/', views.project_list, name='project_list'),
     path('category/<str:category_name>/', views.category_view, name='category_view'),
+    path('register/', views.register, name='register'), 
+    
 ]
 
