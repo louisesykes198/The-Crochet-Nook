@@ -102,11 +102,23 @@ which helps to expedite the design process and guarantee a logical, user-friendl
 
 #### Tablet and iPad Wireframe 
 
-![image](docs/ipad-view.png)
+![image](docs/tablet-register.png)
 
+![image](docs/tablet-login.png)
+
+![image](docs/tablet-homepage.png)
+
+![image](docs/tablet-project.png)
+
+![image](docs/tablet-edit.png)
 
 ### **User Flow Diagram**  
-_(Include a visual representation of how users navigate through the site.)_  
+
+The User Flow Diagram maps out every step a user takes from arriving at the homepage to doing different tasks, 
+such exploring crochet projects, posting new posts, or interacting with content, giving a clear visual depiction of how visitors will move across the website. 
+This diagram illustrates the steps users take to access important features, navigate between sites, and interact with forms. 
+The User Flow Diagram guarantees that the website is easy to use, intuitive, and organised to offer a smooth experience by illustrating the user journey. 
+It is a useful tool for enhancing usability, streamlining navigation, and spotting possible areas for improvement. 
 
 ---
 
