@@ -78,15 +78,15 @@ which helps to expedite the design process and guarantee a logical, user-friendl
 
 #### Desktop Wireframe 
 
-![image](docs\desktop-registration-page.png)
+![image](docs/desktop-registration-page.png)
 
-![image](docs\desktop-login-page.png)
+![image](docs/desktop-login-page.png)
 
-![image](docs\desktop-homepage.png)
+![image](docs/desktop-homepage.png)
 
-![image](docs\desktop-project-page.png)
+![image](docs/desktop-project-page.png)
 
-![image](docs\desktop-edit-page.png)
+![image](docs/desktop-edit-page.png)
 
 #### Mobile Wireframe 
 
