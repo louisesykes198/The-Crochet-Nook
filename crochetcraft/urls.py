@@ -33,8 +33,9 @@ Including another URLconf
 #]
 from django.contrib import admin
 from django.urls import path
-from crochet import views  # Correct import path for views
+from crochet import views  # Imports views from the 'crochet' app
 
+# This code will run the urls for all the websites pages so you can add, edit, delete and view the projects
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),

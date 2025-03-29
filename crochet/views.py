@@ -63,61 +63,60 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Project
-from .forms import ProjectForm  # assuming you have a ProjectForm
+from .forms import ProjectForm  
 
-# Home view - Displays the list of projects
+# Home view - This will isplays the list of projects
 def home(request):
     projects = Project.objects.all()  # Fetch all the projects
     return render(request, 'project_list.html', {'projects': projects})
 
-# Add Project - Displays a form to add a new project
+# Add Project - This will bring up a form to add a new project
 def add_project(request):
     if request.method == 'POST':
         form = ProjectForm(request.POST)
         if form.is_valid():
-            form.save()  # Save the new project
-            return redirect('home')  # Redirect to home page after adding the project
+            form.save()  # To save the new project
+            return redirect('home')  # This will redirect you back to the home page after adding the project
     else:
         form = ProjectForm()
 
     return render(request, 'add_project.html', {'form': form})
 
-# Edit Project - Displays a form to edit an existing project
+# Edit Project - This will displays a form to edit an existing project
 def edit_project(request, item_id):
     project = get_object_or_404(Project, pk=item_id)
 
     if request.method == 'POST':
         form = ProjectForm(request.POST, instance=project)
         if form.is_valid():
-            form.save()  # Save the edited project
-            return redirect('home')  # Redirect to home page after editing the project
+            form.save()  # Save the project
+            return redirect('home')  # To go back to home page 
     else:
         form = ProjectForm(instance=project)
 
     return render(request, 'edit_project.html', {'form': form, 'project': project})
 
-# Delete Project - Deletes an existing project
+# Delete Project - This is to deletes an existing project
 def delete_project(request, item_id):
     project = get_object_or_404(Project, pk=item_id)
 
     if request.method == 'POST':
-        project.delete()  # Delete the project
-        return redirect('home')  # Redirect to home page after deleting the project
-
+        project.delete()  
+        return redirect('home')  
     return render(request, 'delete_project.html', {'project': project})
 
 def project_list(request):
-    # Fetch all projects from the database
+    # This will fetch all the projects from the database
     projects = Project.objects.all()
 
     if request.method == 'POST':
-        item_id = request.POST.get('delete')  # Get the ID of the project to delete
+        item_id = request.POST.get('delete')  # To get the ID of the project to delete
         if item_id:
             project = get_object_or_404(Project, pk=item_id)
-            project.delete()  # Delete the project
-            return redirect('home')  # Redirect back to the home page after deleting
+            project.delete()  
+            return redirect('home')  
 
-    # Render the project list template and pass the 'projects' to it
+    # This piece of code will render the project list template and pass the 'projects' to it
     return render(request, 'project_list.html', {'projects': projects})
 
 
