@@ -63,13 +63,22 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Project
-from .forms import ProjectForm  
+from .forms import ProjectForm
+from django.contrib.auth.forms import UserCreationForm
 
-# Home view - This will displays the list of projects
+
+
+# Home view - This will display a welcome message or featured content
 def home(request):
-    projects = Project.objects.all()  # Fetch all the projects
+    # You can customize the homepage content here (for example, featured projects)
+    return render(request, 'home.html')  # Ensure you have a 'home.html' template
+
+# Project List View - This will display all the projects
+def project_list(request):
+    projects = Project.objects.all()  # Fetch all projects from the database
     return render(request, 'project_list.html', {'projects': projects})
 
+# Category View - This will display projects filtered by category
 def category_view(request, category_name):
     projects = Project.objects.filter(category=category_name)
     return render(request, 'category.html', {'category': category_name, 'projects': projects})
@@ -79,14 +88,14 @@ def add_project(request):
     if request.method == 'POST':
         form = ProjectForm(request.POST)
         if form.is_valid():
-            form.save()  # To save the new project
-            return redirect('home')  # This will redirect you back to the home page after adding the project
+            form.save()  # Save the new project
+            return redirect('project_list')  # Redirect back to the project list after adding a project
     else:
         form = ProjectForm()
 
     return render(request, 'add_project.html', {'form': form})
 
-# Edit Project - This will displays a form to edit an existing project
+# Edit Project - This will display a form to edit an existing project
 def edit_project(request, item_id):
     project = get_object_or_404(Project, pk=item_id)
 
@@ -94,34 +103,31 @@ def edit_project(request, item_id):
         form = ProjectForm(request.POST, instance=project)
         if form.is_valid():
             form.save()  # Save the project
-            return redirect('home')  # To go back to home page 
+            return redirect('project_list')  # Redirect back to the project list after editing the project
     else:
         form = ProjectForm(instance=project)
 
     return render(request, 'edit_project.html', {'form': form, 'project': project})
 
-# Delete Project - This is to deletes an existing project
+# Delete Project - This will delete an existing project
 def delete_project(request, item_id):
     project = get_object_or_404(Project, pk=item_id)
 
     if request.method == 'POST':
-        project.delete()  
-        return redirect('home')  
+        project.delete()  # Delete the project
+        return redirect('project_list')  # Redirect back to the project list after deleting the project
     return render(request, 'delete_project.html', {'project': project})
 
-def project_list(request):
-    # This will fetch all the projects from the database
-    projects = Project.objects.all()
-
+def register(request):
     if request.method == 'POST':
-        item_id = request.POST.get('delete')  # To get the ID of the project to delete
-        if item_id:
-            project = get_object_or_404(Project, pk=item_id)
-            project.delete()  
-            return redirect('home')  
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save new user
+            return redirect('login')  # Redirect to login page after successful registration
+    else:
+        form = UserCreationForm()
 
-    # This piece of code will render the project list template and pass the 'projects' to it
-    return render(request, 'project_list.html', {'projects': projects})
+    return render(request, 'register.html', {'form': form})  # Render the register page
 
 
 

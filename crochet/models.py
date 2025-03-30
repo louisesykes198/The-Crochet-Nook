@@ -5,11 +5,11 @@ from django.db import models
 class Project(models.Model):
     # This section gives a list of project categories to provide users with options 
     CATEGORY_CHOICES = [
-        ('Blankets', 'Blankets')
-        ('Cardigans', 'Cardigans')
-        ('Amigurumi', 'Amigurumi')
-        ('Scarves', 'Scarves')
-        ('Hats', 'Hats')
+        ('Blankets', 'Blankets'),
+        ('Cardigans', 'Cardigans'),
+        ('Amigurumi', 'Amigurumi'),
+        ('Scarves', 'Scarves'),
+        ('Hats', 'Hats'),
     ]
     # This code provides a list of information that you need to include when adding a project to the site
     
