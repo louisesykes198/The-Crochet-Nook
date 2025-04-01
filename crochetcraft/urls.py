@@ -32,6 +32,7 @@ Including another URLconf
     #path('delete/<int:project_id>/', views.delete_project, name='delete_project'),  # Delete project page
 #]
 from django.contrib import admin
+from django.contrib.auth import views as auth_views  # ✅ Import this
 from django.urls import path
 from crochet import views  # Imports views from the 'crochet' app
 
@@ -45,6 +46,7 @@ urlpatterns = [
     path('delete/<int:project_id>/', views.delete_project, name='delete_project'),
     path('category/<str:category_name>/', views.category_view, name='category_view'),
     path('register/', views.register, name='register'), 
-    
+    path('login/', views.user_login, name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),  # 👈 Logout URL
 ]
 
