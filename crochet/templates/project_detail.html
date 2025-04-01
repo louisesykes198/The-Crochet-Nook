@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ project.name }}</h1>
+        <p><strong>Category:</strong> {{ project.category }}</p>
+        <p><strong>Description:</strong> {{ project.description }}</p>
+        <p><strong>Skill Level:</strong> {{ project.skill_level }}</p>
+        <p><strong>Materials Needed:</strong> {{ project.materials_needed }}</p>
+        <p><strong>Notes:</strong> {{ project.notes }}</p>
+        
+        <!-- Display pattern download link -->
+        {% if project.pattern %}
+            <a href="{{ project.pattern.url }}" class="btn btn-primary" download>Download Pattern</a>
+        {% else %}
+            <p>No pattern available for this project.</p>
+        {% endif %}
+
+        <a href="{% url 'update_project' project.id %}" class="btn btn-secondary">Edit Project</a>
+
+        <!-- Link to go back to the project list -->
+        <a href="{% url 'project_list' %}" class="btn btn-secondary mt-3">Back to Project List</a>
+    </div>
+{% endblock %}
+
