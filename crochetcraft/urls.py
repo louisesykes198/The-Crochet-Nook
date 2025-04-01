@@ -35,18 +35,35 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views  # ✅ Import this
 from django.urls import path
 from crochet import views  # Imports views from the 'crochet' app
+from django.conf import settings
+from django.conf.urls.static import static
 
-# This code will run the urls for all the websites pages so you can add, edit, delete and view the projects
 urlpatterns = [
+    # Admin Panel
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),  # Home page
-    path('projects/', views.project_list, name='project_list'),  # Project list page
-    path('add/', views.add_project, name='add_project'),
-    path('edit/<int:item_id>/', views.edit_project, name='edit_project'),
-    path('delete/<int:project_id>/', views.delete_project, name='delete_project'),
-    path('category/<str:category_name>/', views.category_view, name='category_view'),
-    path('register/', views.register, name='register'), 
+
+    # Authentication
+    path('register/', views.register, name='register'),
     path('login/', views.user_login, name='login'),
-    path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),  # 👈 Logout URL
+    path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),  
+
+    # Home & Project List
+    path('', views.home, name='home'),
+    path('projects/', views.project_list, name='project_list'),
+
+    # Project Management
+    path('add_project/', views.add_project, name='add_project'),
+    path('edit/<int:project_id>/', views.edit_project, name='edit_project'),
+    path('delete/<int:project_id>/', views.delete_project, name='delete_project'),
+
+    # Project Detail & Update (Fixed parameter consistency)
+    path('project/<int:project_id>/', views.project_detail, name='project_detail'),
+    path('project/<int:project_id>/update/', views.update_project, name='update_project'),
+
+    # Category Filtering
+    path('category/<str:category_name>/', views.category_view, name='category_view'),
 ]
 
+# Serve media files in development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
