@@ -61,9 +61,10 @@ urlpatterns = [
     path('project/<int:project_id>/update/', views.update_project, name='update_project'),
 
     # Category Filtering
-    path('category/<str:category_name>/', views.category_view, name='category_view'),
+    path('category/<str:category>/', views.category_view, name='category_view'),
 ]
 
 # Serve media files in development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
