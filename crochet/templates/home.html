@@ -2,41 +2,59 @@
 {% load static %}
 
 {% block content %}
-<div class="container text-center">
+<div class="container text-center mt-4">
     <h1>Welcome to The Crochet Nook</h1>
     <p>Select a category to explore:</p>
 
-    <div class="row">
-        <div class="col-md-4">
-            <a href="{% url 'category_view' 'Blankets' %}">
-                <img src="{% static 'images/blanket.png' %}" alt="Blankets" class="img-fluid rounded">
-                <h3>Blankets</h3>
-            </a>
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="category-card">
+                <a href="{% url 'category_view' 'Blankets' %}" class="d-block">
+                    <img src="{% static 'images/blanket.png' %}" alt="Blankets" class="img-fluid rounded">
+                    <h3 class="mt-2">Blankets</h3>
+                </a>
+            </div>
         </div>
-        <div class="col-md-4">
-            <a href="{% url 'category_view' 'Cardigans' %}">
-                <img src="{% static 'images/cardigan.png' %}" alt="Cardigans" class="img-fluid rounded">
-                <h3>Cardigans</h3>
-            </a>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="category-card">
+                <a href="{% url 'category_view' 'Cardigans' %}" class="d-block">
+                    <img src="{% static 'images/cardigan.png' %}" alt="Cardigans" class="img-fluid rounded">
+                    <h3 class="mt-2">Cardigans</h3>
+                </a>
+            </div>
         </div>
-        <div class="col-md-4">
-            <a href="{% url 'category_view' 'Amigurumi' %}">
-                <img src="{% static 'images/amigurumi.png' %}" alt="Amigurumi" class="img-fluid rounded">
-                <h3>Amigurumi</h3>
-            </a>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="category-card">
+                <a href="{% url 'category_view' 'Amigurumi' %}" class="d-block">
+                    <img src="{% static 'images/amigurumi.png' %}" alt="Amigurumi" class="img-fluid rounded">
+                    <h3 class="mt-2">Amigurumi</h3>
+                </a>
+            </div>
         </div>
-        <div class="col-md-4">
-            <a href="{% url 'category_view' 'Scarves' %}">
-                <img src="{% static 'images/scarves.png' %}" alt="Scarves" class="img-fluid rounded">
-                <h3>Scarves</h3>
-            </a>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="category-card">
+                <a href="{% url 'category_view' 'Scarves' %}" class="d-block">
+                    <img src="{% static 'images/scarves.png' %}" alt="Scarves" class="img-fluid rounded">
+                    <h3 class="mt-2">Scarves</h3>
+                </a>
+            </div>
         </div>
-        <div class="col-md-4">
-            <a href="{% url 'category_view' 'Hat' %}">
-                <img src="{% static 'images/hats.png' %}" alt="Hat" class="img-fluid rounded">
-                <h3>Hat</h3>
-            </a>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="category-card">
+                <a href="{% url 'category_view' 'Hats' %}" class="d-block">
+                    <img src="{% static 'images/hats.png' %}" alt="Hats" class="img-fluid rounded">
+                    <h3 class="mt-2">Hats</h3>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="category-card">
+                    <a href="{% url 'category_view' 'Dishcloths' %}" class="d-block">
+                        <img src="{% static 'images/dishcloths.png' %}" alt="Dishcloths" class="img-fluid rounded">
+                        <h3 class="mt-2">Dishcloths</h3>
+                    </a>
+                </div>
         </div>
     </div>
 </div>
 {% endblock %}
+

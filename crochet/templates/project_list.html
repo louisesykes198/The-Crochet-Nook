@@ -12,6 +12,8 @@
             <th>Skill Level</th>
             <th>Materials Needed</th>
             <th>Notes</th>
+            <th>Category</th>  <!-- Added category column here -->
+            <th>Actions</th>  <!-- Added Actions column for Edit and Delete buttons -->
         </tr>
     </thead>
     <tbody>
@@ -22,7 +24,7 @@
             <td>{{ project.skill_level }}</td>
             <td>{{ project.materials_needed }}</td>
             <td>{{ project.notes }}</td>
-            <td>{{ project.category }}</td>
+            <td>{{ project.category }}</td>  <!-- Displaying category -->
             <td>
                 <a href="{% url 'edit_project' project.id %}" class="btn btn-warning btn-sm">Edit Project</a>
                 <a href="{% url 'delete_project' project.id %}" class="btn btn-danger btn-sm">Delete Project</a>
@@ -30,9 +32,10 @@
         </tr>
         {% empty %}
         <tr>
-            <td colspan="6" class="text-center">No projects found</td>
+            <td colspan="7" class="text-center">No projects found</td>  <!-- Adjusted colspan to match number of columns -->
         </tr>
         {% endfor %}
     </tbody>
 </table>
 {% endblock %}
+
