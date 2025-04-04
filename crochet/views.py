@@ -125,8 +125,10 @@ def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('login')
+            user = form.save()
+            # Automatically log in the user after registration
+            login(request, user)
+            return redirect('home')
     else:
         form = UserCreationForm()
 
@@ -142,7 +144,8 @@ def user_login(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('home')
+                next_url = request.GET.get('next', 'home')  # Get the next parameter or default to 'home'
+                return redirect(next_url)
             else:
                 messages.error(request, "Invalid username or password.")
         else:
@@ -195,4 +198,5 @@ def update_project(request, project_id):
 
     return render(request, 'update_project.html', {'form': form, 'project': project})
 
-
+def landing_page(request):
+    return render(request, 'landing.html')
