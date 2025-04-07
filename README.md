@@ -70,9 +70,15 @@ This diagram illustrates the steps users take to access important features, navi
 The User Flow Diagram guarantees that the website is easy to use, intuitive, and organised to offer a smooth experience by illustrating the user journey. 
 It is a useful tool for enhancing usability, streamlining navigation, and spotting possible areas for improvement. 
 
-![image](docs/flow.png)
+<details>
+<summary>Flow Diagram</summary>
+<img src="docs/flow.png" alt="Flow Diagram">
+</details>
 
-![image](docs/flow-pic.png)
+<details>
+<summary>Wireframe Flow Diagram</summary>
+<img src="docs/flow-pic.png" alt="Wireframe Flow Diagram">
+</details>
 
 ### **How Users Move Through the Site**  
 
