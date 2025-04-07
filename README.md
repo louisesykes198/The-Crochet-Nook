@@ -206,6 +206,12 @@ which helps to expedite the design process and guarantee a logical, user-friendl
 
 ## 🎨 Design & Branding  
 
+### **Logo**
+
+The logo features the text "The Crochet Nook" written in a stylish, handwritten script font that gives off a cozy and personal feel. The text is in black against a light blue background, enhancing readability while maintaining a soft, welcoming aesthetic. The playful and artistic style of the font conveys a sense of creativity, fitting well with the handmade, crafty vibe typically associated with crochet.
+
+![image](docs/logo.png)
+
 ### **Colour Scheme**  
 
 The Crochet Nook features a soft and inviting color palette that reflects the cozy, handcrafted essence of crochet. The site’s background uses a calming pastel blue (#C3E4F8), creating a gentle and welcoming atmosphere.
