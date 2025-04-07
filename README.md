@@ -31,8 +31,8 @@ A breakdown of the core functionalities available in The Crochet Nook.
 #### **User Authentication & Profiles**  
 - As a user, I want to create an account so that I can access and contribute to crochet projects.  
 - As a user, I want to log in and log out securely so that my account remains protected.  
-- As a user, I want to reset my password in case I forget it so that I can regain access to my account.  
-- As a user, I want to update my profile information (if profiles are implemented) so that I can personalize my experience.  
+- As a user, I want to view crochet projects shared by others so that I can find inspiration and ideas. 
+- As a user, I want to like and comment on crochet projects so that I can show appreciation and join the community. 
 
 #### **Project Uploads & Management**  
 - As a user, I want to add a new crochet project with images and text so that I can share my work with others.  
@@ -48,7 +48,7 @@ A breakdown of the core functionalities available in The Crochet Nook.
 #### **Engagement & Interaction**  
 - As a user, I want to like crochet projects so that I can show appreciation for others' work.  
 - As a user, I want to comment on crochet projects so that I can ask questions and give feedback.  
-- As a user, I want to delete my own comments so that I can remove anything I no longer want to say.  
+- As a user, I want to delete my comments to remove anything I no longer want to say.  
 - As a user, I want to see how many likes and comments a project has so that I can gauge its popularity.  
 
 #### **Admin & Moderation**  
@@ -60,72 +60,167 @@ A breakdown of the core functionalities available in The Crochet Nook.
 ## 📌 Site Structure  
 
 ### **Navigation Flow**  
-- How users move between different sections of the site.  
-
-### **How Users Move Through the Site**  
-- Explanation of the user journey from browsing to engaging.  
-
----
-
-## 📐 Wireframes & User Flow  
-
-### **Wireframes**  
-
-My website's wireframes serve as a basic framework for organising and arranging its overall design. 
-They ensure a well-organised layout that improves user experience by offering a clear visual guidance for creating each page. 
-The wireframes outline out important components like navigation, content placement, and interactive features, 
-which helps to expedite the design process and guarantee a logical, user-friendly flow throughout the website.
-
-#### Desktop Wireframe 
-
-![image](docs/desktop-registration-page.png)
-
-![image](docs/desktop-login-page.png)
-
-![image](docs/desktop-homepage.png)
-
-![image](docs/desktop-project-page.png)
-
-![image](docs/desktop-edit-page.png)
-
-#### Mobile Wireframe 
-
-![image](docs/moblie-register.png)
-
-![image](docs/moblie-login.png)
-
-![image](docs/mobile-homepage.png)
-
-![image](docs/mobile-project.png)
-
-![image](docs/moblie-edit.png)
-
-#### Tablet and iPad Wireframe 
-
-![image](docs/tablet-register.png)
-
-![image](docs/tablet-login.png)
-
-![image](docs/tablet-homepage.png)
-
-![image](docs/tablet-project.png)
-
-![image](docs/tablet-edit.png)
+How users move between different sections of the site.
 
 ### **User Flow Diagram**  
 
 The User Flow Diagram maps out every step a user takes from arriving at the homepage to doing different tasks, 
-such exploring crochet projects, posting new posts, or interacting with content, giving a clear visual depiction of how visitors will move across the website. 
+such as exploring crochet projects, posting new posts, or interacting with content, giving a clear visual depiction of how visitors will move across the website. 
 This diagram illustrates the steps users take to access important features, navigate between sites, and interact with forms. 
 The User Flow Diagram guarantees that the website is easy to use, intuitive, and organised to offer a smooth experience by illustrating the user journey. 
 It is a useful tool for enhancing usability, streamlining navigation, and spotting possible areas for improvement. 
 
----
+<details>
+<summary>Flow Diagram</summary>
+<img src="docs/flow.png" alt="Flow Diagram">
+</details>
+
+<details>
+<summary>Wireframe Flow Diagram</summary>
+<img src="docs/flow-pic.png" alt="Wireframe Flow Diagram">
+</details>
+
+### **How Users Move Through the Site**  
+
+- Home Page 
+When visitors first arrive at the home page, they will be asked to either register or log in.
+
+- Authentication
+
+Users can either log in or register.
+
+After logging in, they are redirected to the main Projects page.
+
+- Browsing Projects
+
+Users can view all shared crochet projects.
+
+They can filter projects by category or difficulty.
+
+Clicking a project opens a detailed view with images, materials, notes, and pattern instructions.
+
+- Engagement
+
+Logged-in users can like or comment on projects.
+
+Users can also delete their comments.
+
+- Creating Content
+
+Logged-in users can create a new crochet project by filling out a form with all relevant fields.
+
+After submission, the project is displayed in the Projects list.
+
+- Logging Out
+
+Users can safely log out using the navigation bar, which clears their session. 
+
+## 📐 Wireframes
+
+My website's wireframes serve as a basic framework for organising and arranging its overall design.
+They ensure a well-organised layout that improves user experience by offering clear visual guidance for creating each page.
+The wireframes outline important components like navigation, content placement, and interactive features.
+which helps to expedite the design process and guarantee a logical, user-friendly flow throughout the website.
+
+
+#### Desktop Wireframe 
+
+<details>
+<summary>Login Page - Desktop</summary>
+<img src="docs/desktop-login-page.png" alt="Login Page">
+</details>
+
+<details>
+<summary>Resgistration Page - Desktop</summary>
+<img src="docs/desktop-registration-page.png" alt="Resgistration Page">
+</details>
+
+<details>
+<summary>Home Page - Desktop</summary>
+<img src="docs/desktop-homepage.png" alt="Home Page">
+</details>
+
+<details>
+<summary>Project Page - Desktop</summary>
+<img src="docs/desktop-project-page.png" alt="Project Page">
+</details>
+
+<details>
+<summary>Edit Page - Desktop</summary>
+<img src="docs/desktop-edit-page.png" alt="Edit Page">
+</details>
+
+#### Mobile Wireframe 
+
+<details>
+<summary>Login Page - Mobile</summary>
+<img src="docs/moblie-register.png" alt="Login Page">
+</details>
+
+<details>
+<summary>Resgistration Page - Mobile</summary>
+<img src="docs/moblie-login.png" alt="Resgistration Page">
+</details>
+
+<details>
+<summary>Home Page - Mobile</summary>
+<img src="docs/mobile-homepage.png" alt="Home Page">
+</details>
+
+<details>
+<summary>Project Page - Mobile</summary>
+<img src="docs/mobile-project.png" alt="Project Page">
+</details>
+
+<details>
+<summary>Edit Page - Mobile</summary>
+<img src="docs/moblie-edit.png" alt="Edit Page">
+</details>
+
+#### Tablet and iPad Wireframe 
+
+<details>
+<summary>Login Page - Desktop</summary>
+<img src="docs/tablet-login.png" alt="Login Page">
+</details>
+
+<details>
+<summary>Resgistration Page - Desktop</summary>
+<img src="docs/tablet-register.png" alt="Resgistration Page">
+</details>
+
+<details>
+<summary>Home Page - Desktop</summary>
+<img src="docs/tablet-homepage.png" alt="Home Page">
+</details>
+
+<details>
+<summary>Project Page - Desktop</summary>
+<img src="docs/tablet-project.png" alt="Project Page">
+</details>
+
+<details>
+<summary>Edit Page - Desktop</summary>
+<img src="docs/tablet-edit.png" alt="Edit Page">
+</details>
 
 ## 🎨 Design & Branding  
 
-### **Fonts & Colors**  
-- Soft, pastel colors for a warm and welcoming aesthetic.  
+### **Colour Scheme**  
+
+The Crochet Nook features a soft and inviting color palette that reflects the cozy, handcrafted essence of crochet. The site’s background uses a calming pastel blue (#C3E4F8), creating a gentle and welcoming atmosphere.
+
+Content is organized using clean white cards (#FFFFFF) for clarity and contrast. Project cards are enhanced with a delicate pale pink dotted border (#FCDDE8), adding a subtle touch of charm and warmth that complements the overall pastel theme.
+
+Each project card includes three pastel-colored buttons designed for clarity and accessibility:
+
+- View Project: A light blue button that invites users to explore more.
+
+- Edit: A soft yellow button that adds a cheerful, approachable tone for updates.
+
+- Delete: A gentle pink button that maintains visual harmony while signaling caution.
+
+This carefully curated palette ensures a cohesive, soothing, and user-friendly experience, aligning perfectly with the comforting and creative spirit of the crochet community.  
 
 ### **Images & Visuals**  
 - High-quality project images with clear descriptions.  
@@ -133,7 +228,6 @@ It is a useful tool for enhancing usability, streamlining navigation, and spotti
 ### **Accessibility**  
 - Ensuring text contrast, alt text for images, and keyboard navigation support.  
 
----
 
 ## 🗄️ Database & Backend  
 
