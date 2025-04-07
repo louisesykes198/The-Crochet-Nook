@@ -60,14 +60,23 @@ A breakdown of the core functionalities available in The Crochet Nook.
 ## 📌 Site Structure  
 
 ### **Navigation Flow**  
-- How users move between different sections of the site.
+How users move between different sections of the site.
+
+### **User Flow Diagram**  
+
+The User Flow Diagram maps out every step a user takes from arriving at the homepage to doing different tasks, 
+such as exploring crochet projects, posting new posts, or interacting with content, giving a clear visual depiction of how visitors will move across the website. 
+This diagram illustrates the steps users take to access important features, navigate between sites, and interact with forms. 
+The User Flow Diagram guarantees that the website is easy to use, intuitive, and organised to offer a smooth experience by illustrating the user journey. 
+It is a useful tool for enhancing usability, streamlining navigation, and spotting possible areas for improvement. 
 
 ![image](docs/flow.png)
 
 ![image](docs/flow-pic.png)
 
 ### **How Users Move Through the Site**  
-Home Page 
+
+- Home Page 
 When visitors first arrive at the home page, they will be asked to either register or log in.
 
 - Authentication
@@ -100,62 +109,94 @@ After submission, the project is displayed in the Projects list.
 
 Users can safely log out using the navigation bar, which clears their session. 
 
----
+## 📐 Wireframes
 
-## 📐 Wireframes  
-
-### **Wireframes**  
-
-My website's wireframes serve as a basic framework for organising and arranging its overall design. 
-They ensure a well-organised layout that improves user experience by offering clear visual guidance for creating each page. 
-The wireframes outline important components like navigation, content placement, and interactive features. 
+My website's wireframes serve as a basic framework for organising and arranging its overall design.
+They ensure a well-organised layout that improves user experience by offering clear visual guidance for creating each page.
+The wireframes outline important components like navigation, content placement, and interactive features.
 which helps to expedite the design process and guarantee a logical, user-friendly flow throughout the website.
+
 
 #### Desktop Wireframe 
 
-![image](docs/desktop-registration-page.png)
+<details>
+<summary>Login Page - Desktop</summary>
+<img src="docs/desktop-login-page.png" alt="Login Page">
+</details>
 
-![image](docs/desktop-login-page.png)
+<details>
+<summary>Resgistration Page - Desktop</summary>
+<img src="docs/desktop-registration-page.png" alt="Resgistration Page">
+</details>
 
-![image](docs/desktop-homepage.png)
+<details>
+<summary>Home Page - Desktop</summary>
+<img src="docs/desktop-homepage.png" alt="Home Page">
+</details>
 
-![image](docs/desktop-project-page.png)
+<details>
+<summary>Project Page - Desktop</summary>
+<img src="docs/desktop-project-page.png" alt="Project Page">
+</details>
 
-![image](docs/desktop-edit-page.png)
+<details>
+<summary>Edit Page - Desktop</summary>
+<img src="docs/desktop-edit-page.png" alt="Edit Page">
+</details>
 
 #### Mobile Wireframe 
 
-![image](docs/moblie-register.png)
+<details>
+<summary>Login Page - Mobile</summary>
+<img src="docs/moblie-register.png" alt="Login Page">
+</details>
 
-![image](docs/moblie-login.png)
+<details>
+<summary>Resgistration Page - Mobile</summary>
+<img src="docs/moblie-login.png" alt="Resgistration Page">
+</details>
 
-![image](docs/mobile-homepage.png)
+<details>
+<summary>Home Page - Mobile</summary>
+<img src="docs/mobile-homepage.png" alt="Home Page">
+</details>
 
-![image](docs/mobile-project.png)
+<details>
+<summary>Project Page - Mobile</summary>
+<img src="docs/mobile-project.png" alt="Project Page">
+</details>
 
-![image](docs/moblie-edit.png)
+<details>
+<summary>Edit Page - Mobile</summary>
+<img src="docs/moblie-edit.png" alt="Edit Page">
+</details>
 
 #### Tablet and iPad Wireframe 
 
-![image](docs/tablet-register.png)
+<details>
+<summary>Login Page - Desktop</summary>
+<img src="docs/tablet-login.png" alt="Login Page">
+</details>
 
-![image](docs/tablet-login.png)
+<details>
+<summary>Resgistration Page - Desktop</summary>
+<img src="docs/tablet-register.png" alt="Resgistration Page">
+</details>
 
-![image](docs/tablet-homepage.png)
+<details>
+<summary>Home Page - Desktop</summary>
+<img src="docs/tablet-homepage.png" alt="Home Page">
+</details>
 
-![image](docs/tablet-project.png)
+<details>
+<summary>Project Page - Desktop</summary>
+<img src="docs/tablet-project.png" alt="Project Page">
+</details>
 
-![image](docs/tablet-edit.png)
-
-### **User Flow Diagram**  
-
-The User Flow Diagram maps out every step a user takes from arriving at the homepage to doing different tasks, 
-such as exploring crochet projects, posting new posts, or interacting with content, giving a clear visual depiction of how visitors will move across the website. 
-This diagram illustrates the steps users take to access important features, navigate between sites, and interact with forms. 
-The User Flow Diagram guarantees that the website is easy to use, intuitive, and organised to offer a smooth experience by illustrating the user journey. 
-It is a useful tool for enhancing usability, streamlining navigation, and spotting possible areas for improvement. 
-
----
+<details>
+<summary>Edit Page - Desktop</summary>
+<img src="docs/tablet-edit.png" alt="Edit Page">
+</details>
 
 ## 🎨 Design & Branding  
 
@@ -168,7 +209,6 @@ It is a useful tool for enhancing usability, streamlining navigation, and spotti
 ### **Accessibility**  
 - Ensuring text contrast, alt text for images, and keyboard navigation support.  
 
----
 
 ## 🗄️ Database & Backend  
 
