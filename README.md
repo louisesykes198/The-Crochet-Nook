@@ -262,14 +262,140 @@ Main Content – Category Grid
 - A high-quality image of the crochet item.
 - The name of the category centered beneath the image in a clean, sans-serif font.
 
-
-
-
-
-
-
 ### **Images & Visuals**  
-- High-quality project images with clear descriptions.  
+
+#### **Registration Page**
+
+The registration form includes fields for a username, a secure password, and password confirmation. Helpful password guidelines are listed to ensure your account stays safe.
+
+At the top, the navigation bar allows quick access to key areas of the site:
+
+- Home
+
+- Add Project
+
+- Crochet Projects
+
+- Login
+
+- Register
+
+The page design keeps a soft, welcoming tone with a light blue background, easy-to-read fonts, and a simple, user-friendly layout—just like a cozy crochet nook!
+
+![image](docs/reg-page.png)
+
+#### **Login Page**
+
+The login page for The Crochet Nook allows returning users to securely sign in to their account. With a simple form layout, users can enter their username and password to access their crochet projects, add new creations, or interact with the crafting community.
+
+Helpful navigation links are available in the top right corner, making it easy to:
+
+- Home page
+
+- Browse Crochet Projects
+
+- Add a new project
+
+- Register a new account
+
+The gentle blue background and clean design make for a peaceful, user-friendly login experience—perfectly matching the warm, handmade vibe of the crochet world.
+
+![image](docs/login-page.png)
+
+#### **Home Page**
+
+The Welcome Page of The Crochet Nook invites users into a cozy, colorful space to explore different crochet project categories. The layout features a friendly greeting at the top followed by a prompt to select a category.
+
+Displayed in a 2-row, 3-column grid, each category is represented with:
+
+A vibrant, high-quality photo of a crocheted item
+
+A label beneath each image naming the category
+
+Categories include:
+
+- Blankets – Warm, textured throws for cozy vibes
+
+- Cardigans – Stylish, handmade wearables
+
+- Amigurumi – Adorable stuffed animals and characters
+
+- Scarves – Colorful, snug accessories
+
+- Hats – Beanies and pom-pom topped headwear
+
+- Dishcloths – Functional and decorative essentials
+
+The entire layout sits on a soft blue background, reflecting the calm and creative spirit of the crochet community. Each card is spaced evenly and bordered in white, making navigation both intuitive and visually inviting.
+
+![image](docs/landing-page.png)
+
+#### **Add Project Page**
+
+The “Add a New Project” page on The Crochet Nook allows users to share their crochet creations by submitting detailed project entries. The page features a clean form layout with labeled fields for user input.
+
+Form Fields Include:
+
+- Project Name – A single-line text field to title the project.
+
+- Description – A larger text area for an overview or story behind the project.
+
+- Skill Level – A dropdown menu to select difficulty (e.g., Beginner).
+
+- Materials Needed – A field to list yarn types, hook sizes, and other supplies.
+
+- Category – Dropdown to categorize the project (e.g., Blanket, Hat, Amigurumi).
+
+- Notes – Optional space for tips, modifications, or personal thoughts.
+
+File Uploads:
+
+- Upload Pattern (PDF) – Attach a pattern file to share with others.
+
+- Upload Image – Upload a photo of the finished project for inspiration.
+
+At the bottom, a rounded “Add Project” button allows users to submit their project once complete.
+
+The page uses a soft blue background with a simple, welcoming aesthetic, keeping the focus on creativity and contribution.
+
+![image](docs/add-page.png)
+
+#### **Crochet Project Page**
+
+![image](docs/project-page.png)
+
+#### **Blanket Project Page**
+
+![image](docs/blanket-page.png)
+
+#### **Cardigan Project Page**
+
+![image](docs/cardigan-page.png)
+
+#### **Amigurumi Project Page**
+
+![image](docs/ami-page.png)
+
+#### **Scarf Project Page**
+
+![image](docs/scarf-page.png)
+
+#### **Hat Project Page**
+
+![image](docs/hat-page.png)
+
+#### **Dishcloth Project Page**
+
+![image](docs/dish-page.png)
+
+#### **Edit Project Page**
+
+![image](docs/edit-page.png)
+
+#### **Project Description Page**
+
+![image](docs/description-page.png)
+
 
 ### **Accessibility**  
 - Ensuring text contrast, alt text for images, and keyboard navigation support.  
