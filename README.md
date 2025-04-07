@@ -220,7 +220,19 @@ Each project card includes three pastel-colored buttons designed for clarity and
 
 - Delete: A gentle pink button that maintains visual harmony while signaling caution.
 
-This carefully curated palette ensures a cohesive, soothing, and user-friendly experience, aligning perfectly with the comforting and creative spirit of the crochet community.  
+This carefully curated palette ensures a cohesive, soothing, and user-friendly experience, aligning perfectly with the comforting and creative spirit of the crochet community. 
+
+### **Typography** 
+
+The Crochet Nook uses a combination of two fonts — Rock Salt and Quicksand — to reflect both personality and readability throughout the site.
+
+Rock Salt:
+This playful, hand-drawn font brings a handcrafted, whimsical vibe to the site. Inspired by real handwriting with a slightly rough texture, it's perfect for headings or branding elements that need a personal, artsy touch, fitting the handmade spirit of crochet.
+
+Quicksand:
+A clean, rounded sans-serif font that’s modern, friendly, and easy to read. Quicksand is used for body text and content areas, providing excellent readability while maintaining a soft and approachable look that complements the cozy aesthetic of the platform.
+
+Together, these fonts strike a balance between charm and clarity — one expressive and craft-inspired, the other smooth and practical — enhancing the overall user experience with both style and substance.
 
 ### **Images & Visuals**  
 - High-quality project images with clear descriptions.  
