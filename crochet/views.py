@@ -38,7 +38,6 @@ def add_project(request):
         form = ProjectForm()
     return render(request, 'add_project.html', {'form': form})
 
-
 # Edit Project view
 def edit_project(request, project_id):
     project = get_object_or_404(Project, id=project_id)
@@ -156,7 +155,5 @@ def update_project(request, project_id):
 
     return render(request, 'update_project.html', {'form': form, 'project': project})
 
-# Landing Page view
-def landing_page(request):
-    return render(request, 'landing.html')
+
 

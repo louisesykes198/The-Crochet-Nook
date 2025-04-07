@@ -30,14 +30,12 @@ urlpatterns = [
 
     # Category Filtering
     path('category/<str:category>/', views.category_view, name='category_view'),
-
-    # Landing Page
-    path('landing/', views.landing_page, name='landing'),  # Optional landing page
 ]
-
 # Serve media files in development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
 
 
 
