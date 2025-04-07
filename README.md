@@ -246,6 +246,28 @@ A clean, rounded sans-serif font that’s modern, friendly, and easy to read. Qu
 
 Together, these fonts strike a balance between charm and clarity — one expressive and craft-inspired, the other smooth and practical — enhancing the overall user experience with both style and substance.
 
+### **Layout**
+
+The page layout for The Crochet Nook is warm, welcoming, and neatly organized, featuring a grid-style interface with visually appealing images. Here’s a breakdown of the layout:
+
+Header Section
+- Text: "Welcome to The Crochet Nook"
+- Large, bold, and centered at the top.
+- Subtext: "Select a category to explore:"
+- Smaller, friendly instructions just below the main heading.
+
+Main Content – Category Grid
+- The content is displayed in a 3-column grid layout, with two rows.
+- Each category is shown inside a rounded rectangle box with:
+- A high-quality image of the crochet item.
+- The name of the category centered beneath the image in a clean, sans-serif font.
+
+
+
+
+
+
+
 ### **Images & Visuals**  
 - High-quality project images with clear descriptions.  
 
