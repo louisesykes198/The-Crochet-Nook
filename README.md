@@ -206,8 +206,21 @@ which helps to expedite the design process and guarantee a logical, user-friendl
 
 ## 🎨 Design & Branding  
 
-### **Fonts & Colors**  
-- Soft, pastel colors for a warm and welcoming aesthetic.  
+### **Colour Scheme**  
+
+The Crochet Nook features a soft and inviting color palette that reflects the cozy, handcrafted essence of crochet. The site’s background uses a calming pastel blue (#C3E4F8), creating a gentle and welcoming atmosphere.
+
+Content is organized using clean white cards (#FFFFFF) for clarity and contrast. Project cards are enhanced with a delicate pale pink dotted border (#FCDDE8), adding a subtle touch of charm and warmth that complements the overall pastel theme.
+
+Each project card includes three pastel-colored buttons designed for clarity and accessibility:
+
+- View Project: A light blue button that invites users to explore more.
+
+- Edit: A soft yellow button that adds a cheerful, approachable tone for updates.
+
+- Delete: A gentle pink button that maintains visual harmony while signaling caution.
+
+This carefully curated palette ensures a cohesive, soothing, and user-friendly experience, aligning perfectly with the comforting and creative spirit of the crochet community.  
 
 ### **Images & Visuals**  
 - High-quality project images with clear descriptions.  
