@@ -1,10 +1,65 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Add a New Project</h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Add Project</button>
-</form>
+<div class="container">
+    <h1 class="my-4">Add a New Project</h1>
+
+    <div class="card p-4 shadow-lg">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- Project Name -->
+            <div class="mb-3">
+                <label for="id_name" class="form-label">Project Name</label>
+                {{ form.name }}
+            </div>
+
+            <!-- Project Description -->
+            <div class="mb-3">
+                <label for="id_description" class="form-label">Description</label>
+                {{ form.description }}
+            </div>
+
+            <!-- Skill Level -->
+            <div class="mb-3">
+                <label for="id_skill_level" class="form-label">Skill Level</label>
+                {{ form.skill_level }}
+            </div>
+
+            <!-- Materials Needed -->
+            <div class="mb-3">
+                <label for="id_materials_needed" class="form-label">Materials Needed</label>
+                {{ form.materials_needed }}
+            </div>
+
+            <!-- Category -->
+            <div class="mb-3">
+                <label for="id_category" class="form-label">Category</label>
+                {{ form.category }}
+            </div>
+
+            <!-- Notes -->
+            <div class="mb-3">
+                <label for="id_notes" class="form-label">Notes</label>
+                {{ form.notes }}
+            </div>
+
+            <!-- Pattern Upload -->
+            <div class="mb-3">
+                <label for="id_pattern" class="form-label">Upload Pattern (PDF)</label>
+                {{ form.pattern }}
+            </div>
+
+            <!-- Image Upload -->
+            <div class="mb-3">
+                <label for="id_image" class="form-label">Upload Image</label>
+                {{ form.image }}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Project</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
+
+

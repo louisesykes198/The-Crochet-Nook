@@ -1,54 +1,87 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrochetCrafts</title>
+
+    <!-- Load custom CSS after Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
+
+    <!-- PNG Icons for Different Browsers -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{% static 'favicon/favicon-48x48.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'favicon/favicon-192x192.png' %}">
+
+    <!-- Apple Touch Icon for iOS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/favicon-apple-touch.png' %}">
+
+    <title>CrochetCrafts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to my Crochet Nook</h1>
-    
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'project_list' %}">The Crochet Nook</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <div class="container">   
+            <a class="navbar-brand" href="{% url 'home' %}">
+                The Crochet Nook
+            </a>        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'add_project' %}">Add Project</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'project_list' %}">Crochet Projects</a></li>
-                    
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/add_project/' %}active{% endif %}" href="{% url 'add_project' %}">Add Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/projects/' %}active{% endif %}" href="{% url 'project_list' %}">Crochet Projects</a>
+                    </li>
                     {% if user.is_authenticated %}
                         <!-- Show logout only if user is logged in -->
                         <li class="nav-item">
-                            <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                            <form action="{% url 'logout' %}" method="post" style="display: inline-block;">
                                 {% csrf_token %}
-                                <button type="submit" class="nav-link btn btn-link" style="display: inline; border: none; background: none; cursor: pointer;">
+                                <button type="submit" class="nav-link btn btn-link" style="display: inline-block; border: none; background: none; cursor: pointer; line-height: normal;">
                                     Logout
                                 </button>
                             </form>
                         </li>
                     {% else %}
                         <!-- Show login/register if user is NOT logged in -->
-                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/login/' %}active{% endif %}" href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/register/' %}active{% endif %}" href="{% url 'register' %}">Register</a>
+                        </li>
                     {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
-    
-    
-
+    <!-- Main content -->
     <div class="container mt-4">
         {% block content %}
         {% endblock %}
     </div>
-
     <!-- Bootstrap JS for responsive navigation -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="footer">
+        <p>&copy; 2025 CrochetCrafts. All rights reserved.</p>
+      </footer>
 </body>
 </html>
+

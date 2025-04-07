@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Edit Project: {{ project.name }}</h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-success">Save Changes</button>
-</form>
-<a href="{% url 'project_list' %}" class="btn btn-secondary mt-3">Go Back</a>
+<div class="container mt-4">
+    <h2 class="mb-4">Edit Project: {{ project.name }}</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save Changes</button>
+        <a href="{% url 'project_list' %}" class="btn btn-secondary ms-2">Go Back</a>
+    </form>
+</div>
 {% endblock %}

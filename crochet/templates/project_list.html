@@ -1,41 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Crochet Projects</h2>
-<a href="{% url 'add_project' %}" class="btn btn-primary mb-3">Add New Project</a>
+<h2 class="mb-4">Crochet Projects</h2>
+<a href="{% url 'add_project' %}" class="btn btn-primary mb-4">Add New Project</a>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Skill Level</th>
-            <th>Materials Needed</th>
-            <th>Notes</th>
-            <th>Category</th>  <!-- Added category column here -->
-            <th>Actions</th>  <!-- Added Actions column for Edit and Delete buttons -->
-        </tr>
-    </thead>
-    <tbody>
-        {% for project in projects %}
-        <tr>
-            <td>{{ project.name }}</td>
-            <td>{{ project.description }}</td>
-            <td>{{ project.skill_level }}</td>
-            <td>{{ project.materials_needed }}</td>
-            <td>{{ project.notes }}</td>
-            <td>{{ project.category }}</td>  <!-- Displaying category -->
-            <td>
-                <a href="{% url 'edit_project' project.id %}" class="btn btn-warning btn-sm">Edit Project</a>
-                <a href="{% url 'delete_project' project.id %}" class="btn btn-danger btn-sm">Delete Project</a>
-            </td>
-        </tr>
-        {% empty %}
-        <tr>
-            <td colspan="7" class="text-center">No projects found</td>  <!-- Adjusted colspan to match number of columns -->
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="row d-flex align-items-stretch">
+    {% for project in projects %}
+    <div class="col-md-4 mb-4 d-flex">
+        <div class="card project-card w-100">
+            {% if project.image %}
+                <img src="{{ project.image.url }}" class="project-image" alt="{{ project.name }}">
+            {% else %}
+                <img src="https://via.placeholder.com/300" class="project-image" alt="No image available">
+            {% endif %}
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ project.name }}</h5>
+                <p class="card-text">{{ project.description|truncatewords:20 }}</p>
+                <p><strong>Skill:</strong> {{ project.skill_level }}</p>
+                <p><strong>Category:</strong> {{ project.category }}</p>
+                <a href="{% url 'project_detail' project.id %}" class="btn btn-primary mt-auto">View Project</a>
+                <a href="{% url 'edit_project' project.id %}" class="btn btn-warning mt-2">Edit</a>
+                <a href="{% url 'delete_project' project.id %}" class="btn btn-danger mt-2">Delete</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>No projects found.</p>
+    {% endfor %}
+</div>
 {% endblock %}
+
 

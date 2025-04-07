@@ -1,0 +1,10 @@
+core.Microsoft*
+core.mongo*
+core.python*
+venv/
+__pycache__/
+*.py[cod]
+node_modules/
+*.sqlite3
+**/migrations/
+staticfiles/

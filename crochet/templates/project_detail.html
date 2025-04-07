@@ -1,25 +1,78 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container">
-        <h1>{{ project.name }}</h1>
-        <p><strong>Category:</strong> {{ project.category }}</p>
-        <p><strong>Description:</strong> {{ project.description }}</p>
-        <p><strong>Skill Level:</strong> {{ project.skill_level }}</p>
-        <p><strong>Materials Needed:</strong> {{ project.materials_needed }}</p>
-        <p><strong>Notes:</strong> {{ project.notes }}</p>
-        
-        <!-- Display pattern download link -->
-        {% if project.pattern %}
-            <a href="{{ project.pattern.url }}" class="btn btn-primary" download>Download Pattern</a>
-        {% else %}
-            <p>No pattern available for this project.</p>
-        {% endif %}
+<div class="container mt-4">
+    <!-- Project Card -->
+    <div class="card shadow-lg">
+        <div class="row g-0">
+            <!-- Project Image -->
+            <div class="col-md-5">
+                {% if project.image %}
+                    <img src="{{ project.image.url }}" class="img-fluid rounded-start" alt="{{ project.name }}">
+                {% else %}
+                    <img src="https://via.placeholder.com/400" class="img-fluid rounded-start" alt="No image available">
+                {% endif %}
+            </div>
+            
+            <!-- Project Details -->
+            <div class="col-md-7">
+                <div class="card-body">
+                    <h1 class="card-title">{{ project.name }}</h1>
+                    <p class="text-muted"><strong>Category:</strong> {{ project.category }}</p>
+                    <p><strong>Description:</strong> {{ project.description }}</p>
+                    <p><strong>Skill Level:</strong> {{ project.skill_level }}</p>
+                    <p><strong>Materials Needed:</strong> {{ project.materials_needed }}</p>
+                    <p><strong>Notes:</strong> {{ project.notes }}</p>
 
-        <a href="{% url 'update_project' project.id %}" class="btn btn-secondary">Edit Project</a>
+                    <!-- Clickable Image for Pattern Download -->
+                    {% if project.pattern %}
+                        <h3>Download Pattern</h3>
+                        <a href="{{ project.pattern.url }}" download class="btn btn-primary">📥 Download Pattern</a>
+                    {% else %}
+                        <p>No pattern available for this project.</p>
+                    {% endif %}
 
-        <!-- Link to go back to the project list -->
-        <a href="{% url 'project_list' %}" class="btn btn-secondary mt-3">Back to Project List</a>
+                    <!-- Like Button -->
+                    <div class="mt-3">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <button type="submit" name="like" class="btn btn-success">
+                                ❤️ Like ({{ likes|default:0 }})
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Comments Section -->
+    <div class="card mt-4 shadow">
+        <div class="card-body">
+            <h3>Leave a Comment</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <textarea name="comment_text" class="form-control" rows="3"></textarea>
+                <button type="submit" name="comment" class="btn btn-primary mt-2">Submit Comment</button>
+            </form>
+
+            <h3 class="mt-4">Comments</h3>
+            <ul class="list-group">
+                {% for comment in comments %}
+                <li class="list-group-item">
+                    <strong>{{ comment.user.username }}:</strong> {{ comment.comment }}
+                </li>
+                {% empty %}
+                <li class="list-group-item">No comments yet. Be the first to comment!</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
+
+
+
+
 

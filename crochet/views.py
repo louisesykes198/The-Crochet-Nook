@@ -1,65 +1,3 @@
-#from django.shortcuts import render
-#from django.http import HttpResponse
-# Create your views here.
-#def index(request):
-    #return HttpResponse("Welcome to my Crochet Nook")
-#from django.shortcuts import render
-#from .models import Project  # Ensure your Project model is imported
-
-#def home(request):
-    #projects = Project.objects.all()  # Get all projects from the database
-    #return render(request, 'crochet/project_list.html', {'projects': projects})
-# crochet/views.py
-#from django.shortcuts import render, redirect
-#from .models import Project  # Assuming you have a Project model
-#from .forms import ProjectForm  # Assuming you have a ProjectForm (optional if using forms)
-
-#def home(request):
-    # A simple view for the home page, displaying all projects
-    #projects = Project.objects.all()  # Query all projects from the database
-    #return render(request, 'project_list.html', {'projects': projects})
-
-#def add_project(request):
-    #if request.method == 'POST':
-        #form = ProjectForm(request.POST)
-        #if form.is_valid():
-            #form.save()  # Save the new project to the database
-            #return redirect('home')  # Redirect to the home page after saving
-    #else:
-        #form = ProjectForm()  # Display an empty form for GET requests
-
-    #return render(request, 'add_project.html', {'form': form})
-
-# Optionally, you can have other views such as project details, edit, delete, etc.
-# views.py
-
-#from django.shortcuts import render, redirect, get_object_or_404
-#from django.http import HttpResponse
-#from .models import Project
-
-# Other views go here...
-
-#def edit_project(request, item_id):
-    # Fetch the project to edit, or return a 404 if it doesn't exist
-    #project = get_object_or_404(Project, pk=item_id)
-
-    #if request.method == 'POST':
-        # Get the updated data from the form
-        #name = request.POST.get('name')
-        #description = request.POST.get('description')
-
-        #if name and description:
-            # Update the project fields
-            #project.name = name
-            #project.description = description
-            #project.save()
-
-            #return redirect('home')  # Redirect to the home page after saving the changes
-        #else:
-            #return HttpResponse('Invalid data, please fill all fields', status=400)
-
-    # For GET requests, pre-fill the form with the current project data
-    #return render(request, 'edit_project.html', {'project': project})
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Project, Comment, Like
@@ -86,28 +24,35 @@ def category_view(request, category):
 # Add Project view
 def add_project(request):
     if request.method == 'POST':
+        print("FILES:", request.FILES)  # 👈 Add this
         form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            project = form.save()
+            print("Image saved to:", project.image.url)  # 👈 Add this
+            messages.success(request, "Project added successfully!")
             return redirect('project_list')
+        else:
+            print("Form errors:", form.errors)  # 👈 Add this
+            messages.error(request, "There was an error with your form submission.")
     else:
         form = ProjectForm()
     return render(request, 'add_project.html', {'form': form})
 
+
 # Edit Project view
 def edit_project(request, project_id):
     project = get_object_or_404(Project, id=project_id)
-    
+
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
-            form.save()  # Save the updated project
-            return redirect('project_list')  # Redirect to the project list page
+            form.save()
+            messages.success(request, "Project updated successfully!")  # Add success message
+            return redirect('project_list')
         else:
-            # Add an error message if the form is invalid
-            print(form.errors)  # Check the form errors in the terminal or log
+            messages.error(request, "There was an error with your form submission.")  # Add error message
     else:
-        form = ProjectForm(instance=project)  # Initialize the form with the project instance
+        form = ProjectForm(instance=project)
 
     return render(request, 'edit_project.html', {'form': form, 'project': project})
 
@@ -117,6 +62,7 @@ def delete_project(request, project_id):
 
     if request.method == 'POST':
         project.delete()
+        messages.success(request, "Project deleted successfully!")  # Add success message
         return redirect('project_list')
     return render(request, 'delete_project.html', {'project': project})
 
@@ -126,13 +72,21 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            # Automatically log in the user after registration
             login(request, user)
+            messages.success(request, "Account created successfully!")  # Add success message
             return redirect('home')
+        else:
+            messages.error(request, "There was an error with your registration.")  # Add error message
     else:
         form = UserCreationForm()
 
     return render(request, 'register.html', {'form': form})
+
+# User Login view
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+from django.shortcuts import render, redirect
 
 # User Login view
 def user_login(request):
@@ -145,6 +99,7 @@ def user_login(request):
             if user is not None:
                 login(request, user)
                 next_url = request.GET.get('next', 'home')  # Get the next parameter or default to 'home'
+                messages.success(request, "Logged in successfully!")  # Add success message
                 return redirect(next_url)
             else:
                 messages.error(request, "Invalid username or password.")
@@ -153,7 +108,7 @@ def user_login(request):
     else:
         form = AuthenticationForm()
 
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'registration/login.html', {'form': form})  # Render login page with form
 
 # Project Detail view (likes and comments handling)
 def project_detail(request, project_id):
@@ -165,12 +120,14 @@ def project_detail(request, project_id):
             # Prevent user from liking the same project more than once
             if not Like.objects.filter(project=project, user=request.user).exists():
                 Like.objects.create(project=project, user=request.user)
+                messages.success(request, "You liked this project!")  # Add success message
             else:
                 messages.error(request, "You have already liked this project.")
         elif 'comment' in request.POST:
             comment_text = request.POST.get('comment_text')
             if comment_text:  # Ensure the comment text is not empty
                 Comment.objects.create(project=project, user=request.user, comment=comment_text)
+                messages.success(request, "Your comment was posted!")  # Add success message
             else:
                 messages.error(request, "Comment cannot be empty.")
 
@@ -192,11 +149,14 @@ def update_project(request, project_id):
         form = ProjectForm(request.POST, instance=project)
         if form.is_valid():
             form.save()
+            messages.success(request, "Project updated successfully!")  # Add success message
             return redirect('project_detail', project_id=project.id)
     else:
         form = ProjectForm(instance=project)
 
     return render(request, 'update_project.html', {'form': form, 'project': project})
 
+# Landing Page view
 def landing_page(request):
     return render(request, 'landing.html')
+
