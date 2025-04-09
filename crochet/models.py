@@ -27,7 +27,7 @@ class Project(models.Model):
     notes = models.TextField(blank=True, null=True, default='')  # Optional notes field
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
     image = models.ImageField(upload_to='projects/images/', blank=True)  # Optional image field
-    pattern = models.FileField(upload_to='projects/patterns/', blank=True)  # Optional pattern field
+    pattern = models.FileField(upload_to='projects/patterns/', null=True, blank=True)  # Optional pattern field
     #updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
