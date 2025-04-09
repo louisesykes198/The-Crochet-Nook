@@ -696,7 +696,138 @@ The navigation bar at the top provides access to other key sections like Home, A
 ## 🗄️ Database & Backend  
 
 ### **Data Structure & Relationships**  
-- Breakdown of the database schema and models.  
+Database Design for The Crochet Nook
+When designing an efficient and user-friendly database for The Crochet Nook, we followed a structured approach consisting of the following phases:
+
+Requirements Analysis - Identifying the purpose of the database
+
+Organizing Data into Tables - Determining the database structure
+
+Normalizing to Standardize the Tables
+
+Source: Lucidchart Database Diagram / Database Design
+
+1. Requirements Analysis - Identifying the Purpose of the Database
+The first phase of the database design process involved clearly understanding the purpose of the database for The Crochet Nook. The primary objective was to create a platform where users can share crochet projects, interact with other users through comments and likes, and explore crochet projects categorized by type and difficulty.
+
+To complete this phase, we gathered insights from potential users to determine the types of information they expect to interact with when visiting a crochet project platform. Through user interviews and research into similar crochet-sharing platforms, we identified key features needed for the website, such as:
+
+Project Details: Each crochet project should have detailed information like project title, description, images, and category.
+
+User Interactions: Users must be able to like and comment on projects.
+
+Categorization: Projects should be organized into categories like blankets, scarves, hats, and more, to make browsing easier.
+
+User Authentication: Since only registered users can like, comment, and upload projects, user authentication was a priority feature.
+
+2. Organizing Data into Tables - Determining the Database Structure
+The second phase involved organizing the collected requirements into a structured format that could be translated into database tables. This process included determining the necessary tables, their fields, and how they relate to each other.
+
+In this phase, we identified the following real-world entities that would be represented in the database:
+
+Users: Store user details and authentication information.
+
+Crochet Projects: Include project details like title, description, images, and category.
+
+Categories: Organize crochet projects into predefined types like blankets, scarves, etc.
+
+Comments: Allow users to comment on crochet projects.
+
+Likes: Enable users to like crochet projects.
+
+Each of these entities was translated into its own table:
+
+User Table: Contains fields for user details such as username, email, and password.
+
+Crochet Project Table: Contains project details, category, user (creator), and image fields.
+
+Category Table: Contains the name and description of each category.
+
+Comment Table: Links to both a user and a crochet project and stores comment content.
+
+Like Table: Links to both a user and a crochet project and stores information about user likes.
+
+We also mapped the relationships between these tables. This step is critical for understanding how the data interacts:
+
+One-to-Many Relationships:
+
+A User can create many Crochet Projects.
+
+A Category can have many Crochet Projects.
+
+Many-to-Many Relationships:
+
+A User can like many Crochet Projects, and a Crochet Project can be liked by many Users. This was resolved by creating a Like table to handle the many-to-many relationship.
+
+After analyzing the relationships and cardinalities, we refined the structure and ensured that the data was efficiently divided into the correct tables.
+
+3. Normalizing to Standardize the Tables
+Normalization is crucial for maintaining database integrity and reducing redundancy. The Crochet Nook’s database was designed to ensure that each piece of data was stored only once and that there were no unnecessary duplicates across tables.
+
+Normalization was done using the following guidelines:
+
+First Normal Form (1NF): Ensured that all fields in the database contained atomic values, meaning each field in a table holds only one value.
+
+Second Normal Form (2NF): Eliminated partial dependencies by ensuring that non-key attributes were fully dependent on the primary key.
+
+Third Normal Form (3NF): Removed transitive dependencies, ensuring that non-key attributes were directly dependent on the primary key and not on other non-key attributes.
+
+For example, the Project Table will not have duplicate data for categories. Instead, categories are stored separately in a Category Table, which links back to the project via a foreign key. This helps avoid repeating category data in each crochet project entry.
+
+Additionally, each User is linked by a foreign key to their Crochet Projects, Comments, and Likes, ensuring that user-related data is normalized and not duplicated across multiple tables. 
+
+Backend Architecture
+Overview of the Backend: Describe the overall structure of the backend, including the technologies used such as Django, Python, and PostgreSQL.
+
+Framework and Tools: Explain why you chose Django and any other libraries or tools being used, for example, Gunicorn for server deployment and Heroku for hosting.
+
+Models
+Django Models: Include an overview of your Django models, explaining their purpose and structure, such as your User, Project, Comment, Like, and Category models.
+
+Field Types: Describe the field types used in each model, for example, CharField, IntegerField, and ImageField, and explain why each was chosen.
+
+Relationships: Explain how models are related, such as one-to-many or many-to-many relationships, and how Django's ORM manages these relationships.
+
+Database Design and Schema
+This section will include details about how your models map to actual database tables and how they are optimized for performance and scalability. You will also explain indexing, normalization, and other optimizations you applied.
+
+Views and URLs
+Views: Describe the core views that interact with your database, such as views for creating, reading, updating, and deleting projects, comments, and likes.
+
+URL Routing: Explain how your URLs are structured and how they link to specific views. For example, URLs for accessing crochet project categories or specific user profiles.
+
+User Authentication and Authorization
+Django User System: Detail how Django’s built-in user authentication system is set up, such as sign-up, login, and logout processes.
+
+Permissions: Mention how permissions are managed to ensure only authenticated users can perform actions like commenting or liking a project.
+
+Forms and Validation
+User Input: Describe any forms such as project submission forms and comment forms, as well as the validation rules applied to them.
+
+Error Handling: Explain how form errors are handled and communicated to the user.
+
+CRUD Functionality
+Create, Read, Update, Delete: Explain how CRUD operations are implemented for the models and how the backend ensures data integrity during these operations.
+
+APIs
+If your backend includes any APIs, explain how the API endpoints are structured, what data is being sent or received, and how the API is secured.
+
+Security
+Data Security: Describe any measures you've implemented to secure user data, such as password hashing and using HTTPS.
+
+Input Validation: Explain any input validation techniques to prevent malicious input, such as SQL injection and cross-site scripting.
+
+Deployment
+Hosting: Describe how the backend is deployed on Heroku and any environment variables or configuration settings you’ve set up.
+
+Database Hosting: Mention how the PostgreSQL database is set up on Heroku and how data is managed between the production environment and your local development setup.
+
+Scalability: If you’ve taken steps for scalability, such as database optimizations and multi-dyno setup in Heroku, briefly mention them.
+
+Logging and Monitoring
+Logs: Explain how logs are monitored to troubleshoot issues, such as using Heroku logs.
+
+Error Tracking: Mention any tools you’re using for tracking errors in production.
 
 ### **User Accounts & Security**  
 - How user authentication and security are handled.  
