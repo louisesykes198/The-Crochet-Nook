@@ -884,22 +884,54 @@ Security Updates: The software stack, including Django and third-party libraries
 ## 🔧 Technology & Tools  
 
 ### **Languages & Frameworks**  
-- Python, Django, SQL, HTML, CSS, JavaScript, Bootstrap.  
+Python
+Primary Language: Python is the main programming language used for backend development in the project. It is well-suited for web development due to its simplicity, scalability, and support for a wide range of libraries and frameworks.
 
-### **Hosting & Deployment**  
-- Hosted on Heroku with PostgreSQL for database management.  
+Django: The web application is built using the Django framework, which is a high-level Python web framework that allows rapid development of secure and maintainable websites. Django handles much of the heavy lifting, such as URL routing, authentication, form handling, and database management.
 
----
+Django ORM: The Django ORM (Object-Relational Mapping) is used to interact with the PostgreSQL database. It simplifies database queries by allowing developers to use Python code instead of raw SQL, making database interactions more intuitive.
 
-## 🛠️ Testing & Development  
+HTML5
+Structure and Layout: HTML5 is used to define the structure of the web pages. It provides the foundation for the user interface, including elements like forms, tables, and multimedia content.
 
-### **Bug Fixes & Solutions**  
-- Known issues and how they were resolved.  
+Semantic HTML: The application uses semantic HTML elements such as header, footer, article, and section to improve accessibility and search engine optimization.
+
+CSS3
+Styling: CSS3 is used for the visual presentation of the web pages. It is responsible for the layout, colors, fonts, and overall design of the application.
+
+Responsive Design: The site is designed to be fully responsive using media queries, ensuring it works well on devices of all sizes, from desktops to mobile phones.
+
+Custom Styles: Custom styles are written in CSS to ensure the user interface matches the desired look and feel, using a pastel color scheme and a consistent design across the site.
+
+JavaScript
+Interactivity: JavaScript is used to enhance user experience by adding interactivity to the website. This includes dynamic content updates, form validation, and real-time user feedback.
+
+AJAX: Asynchronous JavaScript and XML (AJAX) is used to send requests to the server without refreshing the page, improving the user experience by making interactions feel more responsive.
+
+Bootstrap
+Frontend Framework: Bootstrap is used to ensure that the application has a responsive and visually appealing layout. It includes pre-built CSS and JavaScript components, such as navigation bars, modals, and buttons, which speed up the development process.
+
+Grid System: Bootstrap’s grid system is used to create a flexible layout that adjusts to different screen sizes, making the application mobile-friendly.
+
+PostgreSQL
+Database: PostgreSQL is the relational database used to store data for the web application. It is chosen for its robustness, support for complex queries, and compatibility with Django’s ORM.
+
+Schema: The database schema includes tables for user information, crochet projects, comments, likes, and categories. Django’s migrations are used to manage the database schema and ensure data integrity.
+
+Gunicorn
+WSGI Server: Gunicorn is used as the Web Server Gateway Interface (WSGI) server for the application. It is responsible for handling HTTP requests and passing them to the Django application for processing.
+
+Deployment: Gunicorn is used in conjunction with Heroku to deploy the application in a production environment, ensuring the server can handle multiple simultaneous requests.
+
+Heroku
+Deployment Platform: Heroku is the cloud platform where the web application is deployed. It simplifies the deployment process by providing a platform-as-a-service (PaaS) environment, allowing you to focus on development without worrying about server management.
+
+Heroku Postgres: The application uses the PostgreSQL database provided by Heroku for production, enabling seamless database management in the cloud.
+
+Environment Configuration: Environment variables, such as database credentials and secret keys, are stored securely using Heroku's configuration system.
 
 ### **Future Improvements**  
 - Planned features and enhancements.  
-
----
 
 ## 🚀 Getting Started  
 
