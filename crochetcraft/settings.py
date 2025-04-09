@@ -59,7 +59,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'crochetcraft.wsgi.application'
 
-# ✅ FIXED: Unified database setup with fallback to SQLite for local dev
+# FIXED: Unified database setup with fallback to SQLite for local dev
 DATABASES = {
     'default': dj_database_url.parse(
         os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3'),
@@ -97,6 +97,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/login/'
 LOGOUT_REDIRECT_URL = 'projects'
 
-# ✅ Activate Django-Heroku settings (static files, DB, etc.)
+# Activate Django-Heroku settings (static files, DB, etc.)
 django_heroku.settings(locals())
 
