@@ -830,9 +830,56 @@ Logs: Explain how logs are monitored to troubleshoot issues, such as using Herok
 Error Tracking: Mention any tools you’re using for tracking errors in production.
 
 ### **User Accounts & Security**  
-- How user authentication and security are handled.  
 
----
+User Accounts & Security
+User Authentication
+Django User System: User authentication is implemented using Django’s built-in authentication system. This includes features for user registration, login, and logout.
+
+Authentication Process: The process for users includes account creation, signing in, and session management. Django's AuthenticationForm and LoginView are used to handle these operations.
+
+Password Handling: User passwords are securely stored by Django using hashing algorithms, ensuring that no plain-text passwords are saved in the database.
+
+User Registration
+Account Creation: Users can create an account by providing necessary details like username, email, and password.
+
+Account Verification: Users may be required to verify their email address via an activation link sent to their inbox, ensuring their email is valid.
+
+Authorization and Permissions
+Role-Based Access: The system distinguishes between different types of users such as regular users and admins. Each user role is assigned different permissions.
+
+Permission Management: Permissions control what users are allowed to do. For example, regular users can view projects but only registered users can add their own crochet projects.
+
+Session Management
+Session Security: Sessions are handled securely by Django, using cookies that store session data for the user. Secure cookies are used to prevent unauthorized access.
+
+Session Expiry: Sessions may expire after a certain period of inactivity or after a specified amount of time to enhance security.
+
+Data Security
+Encryption: Sensitive data, including passwords, are encrypted and stored securely. Django uses the PBKDF2 algorithm for password hashing.
+
+HTTPS: The application uses HTTPS to ensure all data transmitted between the user and the server is secure.
+
+Two-Factor Authentication: If two-factor authentication is implemented in the future, users will be able to enable it to further secure their accounts.
+
+Input Validation and Security
+Form Validation: User input is validated to ensure that email formats are correct, passwords meet strength requirements, and to prevent malicious inputs.
+
+Security Best Practices: Django’s built-in protections such as protection against cross-site request forgery and clickjacking ensure that the app remains secure. User inputs are sanitized to prevent malicious code execution.
+
+Account Recovery
+Password Reset: Users can reset their passwords through an email verification link. A secure token is generated to allow users to change their password.
+
+Account Deletion: Users may have the option to delete their accounts, ensuring that all associated data is safely removed from the system.
+
+Logging and Monitoring
+User Activity Logging: User activities such as logging in, adding projects, or making comments may be logged for monitoring and troubleshooting purposes.
+
+Error Monitoring: Errors related to user security or authentication are logged to help identify and address issues quickly.
+
+Security Best Practices
+Security Audits: Regular security audits are conducted to ensure the integrity of the application. This includes checking for vulnerabilities and testing for potential breaches.
+
+Security Updates: The software stack, including Django and third-party libraries, is kept up to date with the latest security patches to protect against known vulnerabilities.
 
 ## 🔧 Technology & Tools  
 
