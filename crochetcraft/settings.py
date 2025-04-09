@@ -14,6 +14,7 @@ from pathlib import Path
 import dj_database_url
 import os
 from django.core.wsgi import get_wsgi_application
+import django_heroku # type: ignore
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -89,7 +90,7 @@ WSGI_APPLICATION = 'crochetcraft.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(
-        "postgresql://neondb_owner:npg_ihxwj4mlAR0p@ep-dark-butterfly-a2k08c50.eu-central-1.aws.neon.tech/squid_elope_virus_497459",
+        os.environ.get('DATABASE_URL'),
         conn_max_age=600,
         ssl_require=True
     )
@@ -151,5 +152,4 @@ LOGIN_URL = '/login/'
 LOGOUT_REDIRECT_URL = 'projects'
 
 # Heroku-specific settings
-import django_heroku
 django_heroku.settings(locals())
