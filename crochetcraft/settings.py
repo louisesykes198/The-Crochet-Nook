@@ -17,6 +17,8 @@ from django.core.wsgi import get_wsgi_application
 from dotenv import load_dotenv
 
 
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -82,8 +84,6 @@ WSGI_APPLICATION = 'crochetcraft.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-load_dotenv()
 
 DATABASES = {
     'default': dj_database_url.parse(
