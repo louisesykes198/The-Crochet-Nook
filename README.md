@@ -690,8 +690,27 @@ The navigation bar at the top provides access to other key sections like Home, A
 
 
 ### **Accessibility**  
-- Ensuring text contrast, alt text for images, and keyboard navigation support.  
 
+Ensuring that The Crochet Nook is accessible to all users, including those with disabilities, has been a key focus during the development of this web application. Several strategies have been implemented to enhance the accessibility of the site.
+
+Text Contrast
+High Contrast: The application follows the Web Content Accessibility Guidelines (WCAG) by ensuring sufficient contrast between text and background elements. This improves readability for users with visual impairments, such as those with color blindness or low vision.
+
+Color Scheme: A pastel color palette is used, with careful attention to contrast ratios to meet accessibility standards. This ensures that text is legible against background colors and that users can easily distinguish content.
+
+Alt Text for Images
+Descriptive Alt Text: All images on the website, including those used in project cards and category sections, have appropriate alternative (alt) text. This text provides a description of the image for users who rely on screen readers or have images disabled.
+
+Contextual Relevance: Alt text descriptions are kept concise but descriptive enough to convey the context of each image, ensuring users who cannot see the images still understand their content.
+
+Keyboard Navigation Support
+Keyboard Accessibility: The website is designed to be fully navigable via keyboard. Users can use the Tab key to move through interactive elements such as links, buttons, and form fields, and the Enter key to activate them.
+
+Focus Indicators: Visual indicators (such as outline borders) are provided when a user focuses on a clickable element, ensuring that keyboard users can easily identify where they are on the page.
+
+Accessible Forms: All forms, including the login, registration, and project submission forms, have proper labeling and are navigable using the keyboard, ensuring that users with mobility impairments can interact with them easily.
+
+By implementing these accessibility features, The Crochet Nook strives to provide an inclusive experience for all users, regardless of their abilities or disabilities.
 
 ## 🗄️ Database & Backend  
 
