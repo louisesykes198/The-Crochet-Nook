@@ -3,9 +3,6 @@ import dj_database_url
 import os
 import django_heroku  # type: ignore
 
-# Activate Django-Heroku settings (static files, DB, etc.)
-django_heroku.settings(locals())
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -92,18 +89,14 @@ LOGOUT_REDIRECT_URL = 'projects'
 
 
 # settings.py
-
-# Add the AWS settings for S3 file storage
-# Static and media files stored on Amazon S3
-AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME', 'my-crochet-project-files')  # Replace default if needed
-AWS_S3_REGION_NAME = 'eu-north-1'  # e.g., 'us-east-1'
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME', 'my-crochet-project-files')
+AWS_S3_REGION_NAME = 'eu-north-1'
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
 
-# Static files
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-# Media files
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+STATICFILES_STORAGE = 'crochetcraft.storage_backends.StaticStorage'
+DEFAULT_FILE_STORAGE = 'crochetcraft.storage_backends.MediaStorage'
+
+django_heroku.settings(locals())
