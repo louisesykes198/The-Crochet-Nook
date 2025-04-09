@@ -14,10 +14,7 @@ from pathlib import Path
 import dj_database_url
 import os
 from django.core.wsgi import get_wsgi_application
-from dotenv import load_dotenv
 
-
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,12 +25,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'django-insecure-1^)d+4#m^9mgvdkn!2pdz4@=cbl9eocmtfect6^f1q*0k0zh90'
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'default-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 print(os.getenv('SECRET_KEY')) 
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com']
+DATABASE_URL = os.environ.get('postgresql://neondb_owner:npg_ihxwj4mlAR0p@ep-dark-butterfly-a2k08c50.eu-central-1.aws.neon.tech/squid_elope_virus_497459')
+
+ALLOWED_HOSTS = ['crochet-nook.herokuapp.com', 'localhost']
 
 
 # Application definition
