@@ -15,25 +15,28 @@ import dj_database_url
 import os
 from django.core.wsgi import get_wsgi_application
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-1^)d+4#m^9mgvdkn!2pdz4@=cbl9eocmtfect6^f1q*0k0zh90'
 SECRET_KEY = os.environ.get('SECRET_KEY', 'default-secret-key')
+
 # SECURITY WARNING: don't run with debug turned on in production!
-print(os.getenv('SECRET_KEY')) 
 DEBUG = False
 
-DATABASE_URL = os.environ.get('postgresql://neondb_owner:npg_ihxwj4mlAR0p@ep-dark-butterfly-a2k08c50.eu-central-1.aws.neon.tech/squid_elope_virus_497459')
+# Get the DATABASE_URL from environment variables
+DATABASE_URL = os.environ.get('DATABASE_URL')
+
+# Parse the DATABASE_URL if it exists and configure the database connection
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.parse(DATABASE_URL)
+    }
 
 ALLOWED_HOSTS = ['crochet-nook.herokuapp.com', 'localhost']
-
 
 # Application definition
 
@@ -80,7 +83,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'crochetcraft.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
