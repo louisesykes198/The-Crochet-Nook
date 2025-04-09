@@ -14,6 +14,7 @@ from pathlib import Path
 import dj_database_url
 import os
 from django.core.wsgi import get_wsgi_application
+from dotenv import load_dotenv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1^)d+4#m^9mgvdkn!2pdz4@=cbl9eocmtfect6^f1q*0k0zh90'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com']
 
@@ -82,11 +83,14 @@ WSGI_APPLICATION = 'crochetcraft.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+load_dotenv()
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(
+        "postgresql://neondb_owner:npg_ihxwj4mlAR0p@ep-dark-butterfly-a2k08c50.eu-central-1.aws.neon.tech/squid_elope_virus_497459",
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
 # Password validation
