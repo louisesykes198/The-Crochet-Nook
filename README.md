@@ -266,19 +266,21 @@ Main Content – Category Grid
 
 #### **Registration Page**
 
+Welcome to the registration page for The Crochet Nook! Here, new users can create a personal account to start sharing their crochet projects, explore others’ work, and connect with a creative community.
+
 The registration form includes fields for a username, a secure password, and password confirmation. Helpful password guidelines are listed to ensure your account stays safe.
 
 At the top, the navigation bar allows quick access to key areas of the site:
 
-- Home
+Home
 
-- Add Project
+Add Project
 
-- Crochet Projects
+Crochet Projects
 
-- Login
+Login
 
-- Register
+Register
 
 The page design keeps a soft, welcoming tone with a light blue background, easy-to-read fonts, and a simple, user-friendly layout—just like a cozy crochet nook!
 
@@ -362,17 +364,139 @@ The page uses a soft blue background with a simple, welcoming aesthetic, keeping
 
 #### **Crochet Project Page**
 
+The Crochet Projects page is a beautifully laid-out collection of user-added crochet patterns. It serves as a gallery where each project is presented with a preview, allowing users to browse, view, edit, or delete their creations.
+
+Page Layout & Features:
+
+Add New Project Button:
+
+Located at the top, this button allows users to quickly navigate to the form for submitting a new crochet project.
+
+Project Cards:
+
+Each project is displayed within an individual, color-bordered card.
+
+Image Preview: A photo representing the crochet project.
+
+Project Title: Clearly stated at the top of the card.
+
+Short Description: A summary of the project’s charm and purpose (truncated for quick browsing).
+
+Skill Level: Shows the required experience: Beginner, Intermediate and Advanced.
+
+Category: Organizes the project type Blankets, Cardigans, Amigurumi, Hats, Scarves and Dishcloths.
+
+Action Buttons:
+
+View Project: Takes the user to the full project description and downloadable resources.
+
+Edit: Allows the user to update any project details.
+
+Delete: Removes the project from the list.
+
+Design:
+Uses soft pastel colors and a dotted border for each card to give a handcrafted, friendly vibe.
+
+Clear layout promotes easy navigation and interaction with each project.
+
 ![image](docs/project-page.png)
 
 #### **Blanket Project Page**
+
+This page is a "Blankets Projects" section from a crochet-themed website, likely part of The Crochet Nook or My Crochet Page. It displays six crochet blanket project cards in a visually appealing grid layout, using a soft, pastel color palette with a light blue background. Each card includes:
+
+Project Name Bunny Blanket, Baby Blanket and more.
+
+Image of the blanket
+
+Brief Description of the project
+
+A "View Project" button styled with a blue border and hover effect
+
+The six featured blanket projects are:
+Bunny Blanket – A cozy blanket with an adorable bunny theme.
+
+Baby Blanket – A simple, soothing baby blanket ideal for beginners.
+
+Granny Square Blanket – A vibrant, colorful take on a traditional granny square design.
+
+Lattice Blanket – Elegant with a textured design, great for home decor.
+
+Shell Blanket – Features pastel shell stitch patterns, soft and elegant.
+
+Cat and Mouse Blanket – Whimsical and fun, featuring cat and mouse motifs.
+
+Each project is likely clickable for more details. The layout and card style are consistent and user-friendly, making it easy to browse.
 
 ![image](docs/blanket-page.png)
 
 #### **Cardigan Project Page**
 
+This page is the "Cardigans Projects" section of your crochet-themed website. It follows the same clean, pastel-toned design as the “Blankets Projects” page, with a light blue background, rounded white cards, and consistent card layout.
+
+Each card includes:
+A project image
+
+Project title in bold
+
+A brief description of the project
+
+A blue-bordered "View Project" button
+
+The featured cardigan projects are:
+Adult Crew Neck Sweater – A timeless and versatile casual sweater.
+
+Matinee Jacket – A warm and elegant jacket, ideal for babies or special occasions.
+
+Gathering Leaves Cardigan – A charming, fall-themed cardigan with swirling leaf motifs.
+
+Iris Cardigan – A long, elegant cardigan perfect for layering, featuring a classic design.
+
+Peggy Cardigan – A red cardigan with a relaxed fit, adding subtle elegance to casual outfits.
+
+Baby Cardigan – A soft and stylish option for babies, with matching booties in the image.
+
+Design Notes:
+The cards have consistent sizing and styling.
+
+The descriptions are concise and inviting.
+
+Button design matches the “Blankets Projects” section, ensuring visual harmony.
+
 ![image](docs/cardigan-page.png)
 
 #### **Amigurumi Project Page**
+
+This is the "Amigurumi Projects" section of your crochet website, showcasing cute and creative crocheted characters and toys. It follows the same consistent and visually cohesive design as the other project sections, with a pastel blue background and clean white project cards.
+
+Each card includes:
+An image of the amigurumi character
+
+A project title
+
+A short description
+
+A "View Project" button with a blue outline
+
+The featured Amigurumi projects:
+Barnyard Friends Collection – A group of adorable farm animals including a pig, chick, and lamb.
+
+Bumble Bee Keyring – Small, cheerful bee keychains to brighten your day.
+
+Octopus – A soft, stackable octopus plushie with wiggly legs and friendly faces.
+
+Penguin – A cute, chubby penguin plushie with flipper wings and a tiny beak.
+
+Pikachu – A crocheted version of the beloved Pokémon character, full of energy and fun.
+
+Disney Stitch – A playful Stitch plushie, full of mischief and charm.
+
+Design Highlights:
+The layout is neatly arranged in two rows of three cards.
+
+The images are vibrant and engaging, perfect for grabbing attention.
+
+The tone is whimsical and lighthearted, matching the amigurumi theme well.
 
 ![image](docs/ami-page.png)
 
@@ -380,19 +504,187 @@ The page uses a soft blue background with a simple, welcoming aesthetic, keeping
 
 ![image](docs/scarf-page.png)
 
+This is the "Scarves Projects" section of your crochet website, dedicated to stylish and cozy accessories perfect for any season. It keeps the same cohesive design as the rest of the site, featuring a soft pastel blue background and crisp white project cards.
+
+Each card includes:
+
+An image of the scarf
+
+A project title
+
+A short, catchy description
+
+A "View Project" button with a soft blue outline
+
+The featured Scarf projects:
+
+Bow Scarf – A chic scarf with a playful bow detail, blending style and whimsy.
+
+Infinity Scarf – An endlessly looped scarf for effortless layering and warmth.
+
+Mouse Snoody – A cute, critter-themed snoody with cozy character and charm.
+
+Racer Wrap – A bold, modern wrap with clean lines and sleek design.
+
+Straight Up Scarf – A minimal and timeless scarf that pairs with anything.
+
+Zepplin Scarf – Airy and modern, this scarf adds elevated simplicity to your look.
+
+Design Highlights:
+
+Projects are displayed in a clean two-row, three-column grid for easy browsing.
+
+Each image showcases the scarf clearly, inviting users to explore further.
+
+The tone is cozy, stylish, and inviting — just like the scarves themselves.
+
 #### **Hat Project Page**
+
+This is the "Hats Projects" section of your crochet website, showcasing cozy and creative headwear for all styles and seasons. The design remains consistent with the rest of the site — a soft pastel blue background with clean, white project cards that make each item pop.
+
+Each card includes:
+
+An image of the crochet hat
+
+A project title
+
+A short, engaging description
+
+A "View Project" button outlined in soft blue
+
+The featured Hat projects:
+
+Cinnamon Swirl Hat and Scarf Set – A warm, coordinating set inspired by cozy cinnamon tones and classic style.
+
+Beginner Beanie – A simple and approachable pattern, perfect for first-time crocheters or relaxing weekend projects.
+
+Candy Cap – Bright, sweet, and full of fun — this playful hat brings a splash of color to any outfit.
+
+Elegant Hat – A refined accessory with timeless charm, perfect for dressing up or down.
+
+Fox Hat – A woodland-inspired design featuring fox ears and adorable detailing for a whimsical touch.
+
+Pebbled Hat – A textured beanie with a stylish “pebbled” surface, offering both warmth and visual interest.
+
+Design Highlights:
+
+Projects are arranged neatly in a two-row, three-column grid for easy browsing.
+
+Each hat is presented with a vibrant image to capture its unique flair.
+
+The tone is playful, stylish, and cozy — matching the warm and creative vibe of the hat category.
+
+
 
 ![image](docs/hat-page.png)
 
 #### **Dishcloth Project Page**
 
+This is the "Dishcloth Projects" section of your crochet website, featuring a collection of functional and decorative crochet patterns for the kitchen and home. Staying true to the site’s aesthetic, the section is presented with a soft pastel blue background and clean white project cards for a cohesive, inviting look.
+
+Each card includes:
+
+An image of the dishcloth or coaster
+
+A project title
+
+A short, friendly description
+
+A "View Project" button outlined in blue
+
+The featured Dishcloth projects:
+
+Dishcloth and Tea Towel – A simple and elegant set that blends style and function for your daily kitchen needs.
+
+Corgi Butts Coasters – Playful and adorable, these coasters bring a smile with every fluffy-tailed corgi design.
+
+Fantasy Naturale – A bright and practical dishcloth that highlights natural cotton yarn in bold, fun colors.
+
+Holi Inspired Dishcloth – A festive and colorful design inspired by the joyful hues of the Holi celebration.
+
+Sunburst Coaster – Radiating texture and cheer, this sunny coaster adds handmade warmth to any table.
+
+Snowflake Coaster – Delicate and elegant, this winter-themed design adds a touch of seasonal magic to your décor.
+
+Design Highlights:
+
+All project cards are arranged in a neat two-row, three-column grid.
+
+Images are bright and showcase the texture and shape of each dishcloth clearly.
+
+The tone is cheerful and homey, matching the comforting, everyday nature of dishcloths and coasters.
+
+
+
 ![image](docs/dish-page.png)
 
 #### **Edit Project Page**
 
+This is the "Edit Project" section of your crochet website, where you can easily update or refine the details of your crochet projects. The page has been designed to ensure a smooth and intuitive editing process, all while keeping in line with the clean, inviting aesthetic of the site.
+
+Each section includes:
+
+Project Title: Edit the name of your crochet creation.
+
+Category: Choose the most fitting category for your project, such as Blankets, Scarves, or Dishcloths.
+
+Description: Add or update a friendly, short description that highlights the details of your project.
+
+Skill Level: Adjust the difficulty level to guide crocheters of all abilities.
+
+Materials Needed: List the yarns, hooks, and any additional supplies required.
+
+Notes: Include any important tips or special instructions for makers.
+
+Pattern: Attach or change the pattern if available for download or printing.
+
+Image: Update or upload an image that showcases your project.
+
+Design Highlights:
+
+The page is clean and minimalist, with fields clearly outlined for easy editing.
+
+All updates are immediately visible, with an option to preview changes before finalizing.
+
+The soft pastel theme creates a welcoming, user-friendly interface that aligns with the overall aesthetic of the site.
+
+Once you’ve made your changes, don’t forget to save and share your updated creation with the crochet community!
+
 ![image](docs/edit-page.png)
 
 #### **Project Description Page**
+
+The Project Description Page gives users a detailed view of a specific crochet project. The layout is visually appealing and user-friendly, combining both image and text to deliver all essential information about the pattern.
+
+Image Display: A large image of the finished crochet project is prominently shown on the left side to give users a visual reference of the outcome.
+
+Project Information Section (Right Side):
+
+The title of the project is displayed in bold, large font.
+
+Category the project falls under (e.g., Amigurumi).
+
+Description providing a detailed overview of the project, its inspiration, and what makes it special.
+
+Skill Level to help users determine difficulty.
+
+Materials needed are listed clearly for ease of preparation.
+
+Notes section for any extra information or tips (optional).
+
+Interactive Buttons:
+
+A “Download Pattern” button for users to access the project PDF.
+
+A “Like” button with a heart icon and a count, allowing users to express appreciation for the pattern.
+
+Design & Layout:
+
+Light background with clean font styling.
+
+Elements are spaced and aligned for readability.
+
+The navigation bar at the top provides access to other key sections like Home, Add Project, Crochet Projects, and Logout.
 
 ![image](docs/description-page.png)
 
