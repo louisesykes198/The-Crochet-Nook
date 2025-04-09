@@ -3,6 +3,9 @@ import dj_database_url
 import os
 import django_heroku  # type: ignore
 
+# Activate Django-Heroku settings (static files, DB, etc.)
+django_heroku.settings(locals())
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -84,39 +87,23 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static and media files
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Default primary key field type
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 LOGIN_URL = '/login/'
 LOGOUT_REDIRECT_URL = 'projects'
 
-# Activate Django-Heroku settings (static files, DB, etc.)
-django_heroku.settings(locals())
 
 # settings.py
 
 # Add the AWS settings for S3 file storage
+# Static and media files stored on Amazon S3
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME', 'my-crochet-project-files')  # Replace default if needed
+AWS_S3_REGION_NAME = 'eu-north-1'  # e.g., 'us-east-1'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
 
+# Static files
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# Media files
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# AWS credentials (these will be pulled from Heroku Config Vars)
-AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-
-# AWS S3 Bucket name
-AWS_STORAGE_BUCKET_NAME = 'my-crochet-project-files'  # Replace with your actual bucket name
-
-# AWS region where your S3 bucket is hosted
-AWS_S3_REGION_NAME = 'eu-north-1'  # Replace with the region, e.g., 'us-east-1'
-
-# Optionally, configure the endpoint URL (if using a custom endpoint)
-# AWS_S3_ENDPOINT_URL = 'https://s3.amazonaws.com'  # Optional, if necessary
