@@ -29,7 +29,7 @@ class Project(models.Model):
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
 
     image = models.ImageField(upload_to='project_images/')  # 🌸 Optional — paste in an image URL
-    pattern_text = models.TextField(blank=True, null=True)  # 🧶 Crochet pattern as text instead of upload
+    pattern = models.TextField(blank=True, null=True)  # 🧶 Crochet pattern as text instead of upload
 
     created_at = models.DateTimeField(auto_now_add=True)
 
