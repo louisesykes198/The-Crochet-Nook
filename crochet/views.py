@@ -39,8 +39,8 @@ def add_project(request):
     return render(request, 'add_project.html', {'form': form})
 
 # Edit Project view
-def edit_project(request, project_id):
-    project = get_object_or_404(Project, id=project_id)
+def edit_project(request, slug):
+    project = get_object_or_404(Project, slug=slug)
 
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES, instance=project)

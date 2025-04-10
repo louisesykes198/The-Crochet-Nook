@@ -24,22 +24,27 @@ class ProjectForm(forms.ModelForm):
             ext_validator(pattern)
         return pattern
 
-    def clean_image(self):
-        """Ensure only valid JPEG or PNG images are allowed."""
-        image = self.cleaned_data.get('image')
-        if image:
-            # Validate file extension
-            ext_validator = FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])
-            ext_validator(image)
+def clean_image(self):
+    """Ensure only valid JPEG or PNG images are allowed and under 5MB."""
+    image = self.cleaned_data.get('image')
+    if image:
+        # ✅ Check file size (max 5MB)
+        if image.size > 5 * 1024 * 1024:
+            raise ValidationError("Image file too large ( > 5MB )")
 
-            # Validate actual image format
-            try:
-                img = Image.open(image)
-                if img.format not in ['JPEG', 'PNG']:
-                    raise ValidationError('Only JPEG and PNG images are allowed.')
-            except Exception:
-                raise ValidationError('Invalid image file.')
-        return image
+        # ✅ Validate file extension
+        ext_validator = FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])
+        ext_validator(image)
+
+        # ✅ Validate actual image format with Pillow
+        try:
+            img = Image.open(image)
+            if img.format not in ['JPEG', 'PNG']:
+                raise ValidationError('Only JPEG and PNG images are allowed.')
+        except Exception:
+            raise ValidationError('Invalid image file.')
+    return image
+
 
 
 

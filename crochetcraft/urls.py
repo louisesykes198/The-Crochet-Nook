@@ -21,13 +21,12 @@ urlpatterns = [
 
     # Project Management
     path('add_project/', login_required(views.add_project), name='add_project'),  # Add project with login
-    path('edit/<int:project_id>/', login_required(views.edit_project), name='edit_project'),  # Edit project with login
+    path('edit/<slug:slug>/', login_required(views.edit_project), name='edit_project'), # Edit project with login
     path('delete/<int:project_id>/', login_required(views.delete_project), name='delete_project'),  # Delete project with login
 
     # Project Detail & Update
     path('project/<slug:slug>/', views.project_detail, name='project_detail'),
     path('project/<slug:slug>/update/', login_required(views.update_project), name='update_project'),
-
 
     # Category Filtering
     path('category/<str:category>/', views.category_view, name='category_view'),
