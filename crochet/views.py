@@ -110,25 +110,34 @@ def user_login(request):
     return render(request, 'registration/login.html', {'form': form})  # Render login page with form
 
 # Project Detail view (likes and comments handling)
-def project_detail(request, project_id):
-    project = get_object_or_404(Project, id=project_id)
+def project_detail(request, slug):
+    project = get_object_or_404(Project, slug=slug)
 
-    # Handle the form for adding likes and comments
+    # Handle likes and comments
     if request.method == 'POST':
         if 'like' in request.POST:
-            # Prevent user from liking the same project more than once
             if not Like.objects.filter(project=project, user=request.user).exists():
                 Like.objects.create(project=project, user=request.user)
-                messages.success(request, "You liked this project!")  # Add success message
+                messages.success(request, "You liked this project!")
             else:
                 messages.error(request, "You have already liked this project.")
         elif 'comment' in request.POST:
             comment_text = request.POST.get('comment_text')
-            if comment_text:  # Ensure the comment text is not empty
+            if comment_text:
                 Comment.objects.create(project=project, user=request.user, comment=comment_text)
-                messages.success(request, "Your comment was posted!")  # Add success message
+                messages.success(request, "Your comment was posted!")
             else:
                 messages.error(request, "Comment cannot be empty.")
+
+        return redirect('project_detail', slug=project.slug)
+
+    context = {
+        'project': project,
+        'comments': project.comments.all(),
+        'likes': project.likes.count(),
+    }
+
+    return render(request, 'project_detail.html', context)
 
     # Retrieve likes and comments for the project
     comments = Comment.objects.filter(project=project)

@@ -25,8 +25,9 @@ urlpatterns = [
     path('delete/<int:project_id>/', login_required(views.delete_project), name='delete_project'),  # Delete project with login
 
     # Project Detail & Update
-    path('project/<int:project_id>/', views.project_detail, name='project_detail'),
-    path('project/<int:project_id>/update/', login_required(views.update_project), name='update_project'),
+    path('project/<slug:slug>/', views.project_detail, name='project_detail'),
+    path('project/<slug:slug>/update/', login_required(views.update_project), name='update_project'),
+
 
     # Category Filtering
     path('category/<str:category>/', views.category_view, name='category_view'),
