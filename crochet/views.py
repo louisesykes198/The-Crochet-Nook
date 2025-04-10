@@ -30,9 +30,6 @@ def category_view(request, category):
     
     projects = Project.objects.filter(category=category)
     
-    # Optionally log the filtered projects count for debugging
-    logger.debug(f"Found {projects.count()} projects in category: {category}")
-    
     return render(request, 'category.html', {"category": category, "projects": projects})
 
 # Add Project view
