@@ -6,6 +6,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from .models import CATEGORY_CHOICES
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Home view
 def home(request):
@@ -18,8 +22,19 @@ def project_list(request):
 
 # Category view (projects based on category)
 def category_view(request, category):
+    category = category.capitalize()  # Ensure the category name is capitalized
+    
+    # Check if the category exists in choices
+    if category not in dict(CATEGORY_CHOICES):
+        return render(request, '404.html', status=404)  # Handle invalid category
+    
     projects = Project.objects.filter(category=category)
+    
+    # Optionally log the filtered projects count for debugging
+    logger.debug(f"Found {projects.count()} projects in category: {category}")
+    
     return render(request, 'category.html', {"category": category, "projects": projects})
+
 
 # Add Project view
 def add_project(request):
