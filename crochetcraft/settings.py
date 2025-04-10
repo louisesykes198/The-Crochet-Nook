@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'default-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # Remember to set to False in production
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'  # Remember to set to False in production
 
 ALLOWED_HOSTS = ['crochet-nook-900ff1f7fbbc.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -83,9 +83,6 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
-
-LOGIN_URL = '/login/'
-LOGOUT_REDIRECT_URL = 'projects'
 
 # Static and media files
 STATIC_URL = '/static/'

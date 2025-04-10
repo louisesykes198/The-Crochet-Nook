@@ -1,33 +1,21 @@
 {% extends 'base.html' %}
-
+{% block title %}All Projects{% endblock %}
 {% block content %}
-<h2 class="mb-4">Crochet Projects</h2>
-<a href="{% url 'add_project' %}" class="btn btn-primary mb-4">Add New Project</a>
-
-<div class="row d-flex align-items-stretch">
+<h2>My Crochet Projects</h2>
+<ul>
     {% for project in projects %}
-    <div class="col-md-4 mb-4 d-flex">
-        <div class="card project-card w-100">
-            {% if project.image %}
-                <img src="{{ project.image.url }}" class="project-image" alt="{{ project.name }}">
-            {% else %}
-                <img src="https://via.placeholder.com/300" class="project-image" alt="No image available">
-            {% endif %}
-            <div class="card-body d-flex flex-column">
-                <h5 class="card-title">{{ project.name }}</h5>
-                <p class="card-text">{{ project.description|truncatewords:20 }}</p>
-                <p><strong>Skill:</strong> {{ project.skill_level }}</p>
-                <p><strong>Category:</strong> {{ project.category }}</p>
-                <a href="{% url 'project_detail' project.id %}" class="btn btn-primary mt-auto">View Project</a>
-                <a href="{% url 'edit_project' project.id %}" class="btn btn-warning mt-2">Edit</a>
-                <a href="{% url 'delete_project' project.id %}" class="btn btn-danger mt-2">Delete</a>
-            </div>
-        </div>
-    </div>
+        <li>
+            <strong>{{ project.name }}</strong> - {{ project.status }}<br>
+            <em>{{ project.difficulty_level }}</em> • {{ project.yarn_type }} • {{ project.date_started|date:"M d, Y" }}<br>
+            <a href="{% url 'project_detail' project.pk %}">View</a> |
+            <a href="{% url 'project_update' project.pk %}">Edit</a> |
+            <a href="{% url 'project_delete' project.pk %}">Delete</a>
+        </li>
     {% empty %}
-    <p>No projects found.</p>
+        <li>No crochet projects found. Add one!</li>
     {% endfor %}
-</div>
+</ul>
 {% endblock %}
+
 
 

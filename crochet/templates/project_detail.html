@@ -1,81 +1,21 @@
 {% extends 'base.html' %}
-
+{% block title %}{{ project.name }}{% endblock %}
 {% block content %}
-<div class="container mt-4">
-    <!-- Project Card -->
-    <div class="card shadow-lg">
-        <div class="row g-0">
-            <!-- Project Image -->
-            <div class="col-md-5">
-                {% if project.image %}
-                    <img src="{{ project.image.url }}" class="img-fluid rounded-start" alt="{{ project.name }}">
-                {% else %}
-                    <img src="https://via.placeholder.com/400" class="img-fluid rounded-start" alt="No image available">
-                {% endif %}
-            </div>
-            
-            <!-- Project Details -->
-            <div class="col-md-7">
-                <div class="card-body">
-                    <h1 class="card-title">{{ project.name }}</h1>
-                    <p class="text-muted"><strong>Category:</strong> {{ project.category }}</p>
-                    <p><strong>Description:</strong> {{ project.description }}</p>
-                    <p><strong>Skill Level:</strong> {{ project.skill_level }}</p>
-                    <p><strong>Materials Needed:</strong> {{ project.materials_needed }}</p>
-                    <p><strong>Notes:</strong> {{ project.notes }}</p>
-
-                    <!-- Clickable Image for Pattern Download -->
-                    {% if project.pattern %}
-                        <h3>Download Pattern</h3>
-                        <a href="{{ project.pattern.url }}" download class="btn btn-primary">📥 Download Pattern</a>
-                    {% else %}
-                        <p>No pattern available for this project.</p>
-                    {% endif %}
-
-                    <!-- Like Button -->
-<!-- Like Button -->
-                    <div class="mt-3">
-                        {% if user.is_authenticated %}
-                            <form method="POST">
-                                {% csrf_token %}
-                                <button type="submit" name="like" class="btn btn-success">
-                                    Like ({{ likes|default:0 }})
-                                </button>
-                            </form>
-                        {% else %}
-                            <p><em>Log in to like this project!</em></p>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Comments Section -->
-    <div class="card mt-4 shadow">
-        <div class="card-body">
-            <h3>Leave a Comment</h3>
-            <form method="POST">
-                {% csrf_token %}
-                <textarea name="comment_text" class="form-control" rows="3"></textarea>
-                <button type="submit" name="comment" class="btn btn-primary mt-2">Submit Comment</button>
-            </form>
-
-            <h3 class="mt-4">Comments</h3>
-            <ul class="list-group">
-                {% for comment in comments %}
-                <li class="list-group-item">
-                    <strong>{{ comment.user.username }}:</strong> {{ comment.comment }}
-                </li>
-                {% empty %}
-                <li class="list-group-item">No comments yet. Be the first to comment!</li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-</div>
-
+<h2>{{ project.name }}</h2>
+<p><strong>Status:</strong> {{ project.status }}</p>
+<p><strong>Yarn Type:</strong> {{ project.yarn_type }}</p>
+<p><strong>Difficulty:</strong> {{ project.difficulty_level }}</p>
+<p><strong>Estimated Time:</strong> {{ project.estimated_time }}</p>
+<p><strong>Date Started:</strong> {{ project.date_started }}</p>
+<p><strong>Notes:</strong><br>{{ project.notes|linebreaks }}</p>
+{% if project.pattern_image %}
+    <p><strong>Pattern Image:</strong><br><img src="{{ project.pattern_image.url }}" alt="Pattern" width="200"></p>
+{% endif %}
+<a href="{% url 'project_update' project.pk %}">Edit</a> |
+<a href="{% url 'project_delete' project.pk %}">Delete</a> |
+<a href="{% url 'project_list' %}">Back to List</a>
 {% endblock %}
+
 
 
 
