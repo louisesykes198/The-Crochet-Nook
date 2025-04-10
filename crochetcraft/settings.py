@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'default-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # Remember to set to False in production
+DEBUG = False  # Remember to set to False in production
 
 ALLOWED_HOSTS = ['crochet-nook-900ff1f7fbbc.herokuapp.com', 'localhost', '127.0.0.1']
 
